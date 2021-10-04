@@ -1,0 +1,34 @@
+The License Agreement:
+
+SWEEFA V1.0
+
+The Application is called “Solar & Wind Energy Estimation and Forecasting 
+Application” (SWEEFA). It has been developed in MATLAB.
+
+The complete application has been developed and created by 
+Mr. Ninad Kiran Gaikwad as a part of his M-Tech (Power Systems 
+& Power Electronics) Thesis, working as a Research Intern at GERMI; 
+and submitted to Sardar Patel College of Engineering, Mumbai.
+
+Note: The Solar PV Financial Module Application is based on the
+excel sheet created by Mrs. Madhu Choudhary of GERMI
+
+The application in its current stage is designed and tested for research 
+environment. Hence, the Creator a does not take any responsibility of any 
+financial losses occurring out of using this application.
+
+The right to distribute, redistribute and copyright the application solely 
+lies with the Creator. Stern action will be taken in the event of violation
+of this clause.
+
+For Technical Help, Model Improvement Suggestions and Constructive Criticism 
+please contact:
+
+Ninad Kiran Gaikwad,
+Jr. Project Fellow, GERMI
+email-1: ninad.g@germi.res.in
+email-2: ninadkgaikwad@gmail.com
+
+For online tutorials visit:
+
+https://www.youtube.com/watch?v=UTBeBQLXG8U&list=PLrlB-ixA7o7IL84ifYV5PYK9qQ8AgN6r4

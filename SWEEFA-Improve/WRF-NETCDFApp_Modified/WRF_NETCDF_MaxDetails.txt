@@ -1,0 +1,1669 @@
+Source:
+           E:\SavalsungData\Output_Data\WRF-Output\Post-Processed-WRF-NETCDF-Files\WRF_D01_2018-01-29
+Format:
+           classic
+Global Attributes:
+           TITLE                          = ' OUTPUT FROM WRF V3.7 MODEL'
+           START_DATE                     = '2018-01-29_00:00:00'
+           SIMULATION_START_DATE          = '2018-01-29_00:00:00'
+           WEST-EAST_GRID_DIMENSION       = 13
+           SOUTH-NORTH_GRID_DIMENSION     = 13
+           BOTTOM-TOP_GRID_DIMENSION      = 30
+           DX                             = 3000
+           DY                             = 3000
+           SKEBS_ON                       = 0
+           SPEC_BDY_FINAL_MU              = 0
+           USE_Q_DIABATIC                 = 0
+           GRIDTYPE                       = 'C'
+           DIFF_OPT                       = 1
+           KM_OPT                         = 4
+           DAMP_OPT                       = 0
+           DAMPCOEF                       = 0.2
+           KHDIF                          = 0
+           KVDIF                          = 0
+           MP_PHYSICS                     = 3
+           RA_LW_PHYSICS                  = 1
+           RA_SW_PHYSICS                  = 1
+           SF_SFCLAY_PHYSICS              = 1
+           SF_SURFACE_PHYSICS             = 2
+           BL_PBL_PHYSICS                 = 1
+           CU_PHYSICS                     = 1
+           SF_LAKE_PHYSICS                = 0
+           SURFACE_INPUT_SOURCE           = 1
+           SST_UPDATE                     = 0
+           GRID_FDDA                      = 0
+           GFDDA_INTERVAL_M               = 0
+           GFDDA_END_H                    = 0
+           GRID_SFDDA                     = 0
+           SGFDDA_INTERVAL_M              = 0
+           SGFDDA_END_H                   = 0
+           HYPSOMETRIC_OPT                = 2
+           USE_THETA_M                    = 0
+           SF_URBAN_PHYSICS               = 0
+           SHCU_PHYSICS                   = 0
+           MFSHCONV                       = 0
+           FEEDBACK                       = 1
+           SMOOTH_OPTION                  = 0
+           SWRAD_SCAT                     = 1
+           W_DAMPING                      = 0
+           DT                             = 18
+           RADT                           = 30
+           BLDT                           = 0
+           CUDT                           = 5
+           AER_OPT                        = 0
+           SWINT_OPT                      = 0
+           AER_TYPE                       = 1
+           AER_AOD550_OPT                 = 1
+           AER_ANGEXP_OPT                 = 1
+           AER_SSA_OPT                    = 1
+           AER_ASY_OPT                    = 1
+           AER_AOD550_VAL                 = 0.12
+           AER_ANGEXP_VAL                 = 1.3
+           AER_SSA_VAL                    = 1.4013e-45
+           AER_ASY_VAL                    = 1.4013e-45
+           MOIST_ADV_OPT                  = 1
+           SCALAR_ADV_OPT                 = 1
+           TKE_ADV_OPT                    = 1
+           DIFF_6TH_OPT                   = 0
+           DIFF_6TH_FACTOR                = 0.12
+           OBS_NUDGE_OPT                  = 0
+           BUCKET_MM                      = -1
+           BUCKET_J                       = -1
+           PREC_ACC_DT                    = 0
+           SF_OCEAN_PHYSICS               = 0
+           ISFTCFLX                       = 0
+           ISHALLOW                       = 0
+           ISFFLX                         = 1
+           ICLOUD                         = 1
+           ICLOUD_CU                      = 0
+           TRACER_PBLMIX                  = 1
+           SCALAR_PBLMIX                  = 0
+           YSU_TOPDOWN_PBLMIX             = 0
+           GRAV_SETTLING                  = 0
+           DFI_OPT                        = 0
+           SIMULATION_INITIALIZATION_TYPE = 'REAL-DATA CASE'
+           WEST-EAST_PATCH_START_UNSTAG   = 1
+           WEST-EAST_PATCH_END_UNSTAG     = 12
+           WEST-EAST_PATCH_START_STAG     = 1
+           WEST-EAST_PATCH_END_STAG       = 13
+           SOUTH-NORTH_PATCH_START_UNSTAG = 1
+           SOUTH-NORTH_PATCH_END_UNSTAG   = 12
+           SOUTH-NORTH_PATCH_START_STAG   = 1
+           SOUTH-NORTH_PATCH_END_STAG     = 13
+           BOTTOM-TOP_PATCH_START_UNSTAG  = 1
+           BOTTOM-TOP_PATCH_END_UNSTAG    = 29
+           BOTTOM-TOP_PATCH_START_STAG    = 1
+           BOTTOM-TOP_PATCH_END_STAG      = 30
+           GRID_ID                        = 1
+           PARENT_ID                      = 1
+           I_PARENT_START                 = 1
+           J_PARENT_START                 = 1
+           PARENT_GRID_RATIO              = 1
+           CEN_LAT                        = 17.104
+           CEN_LON                        = 75.712
+           TRUELAT1                       = 30
+           TRUELAT2                       = 60
+           MOAD_CEN_LAT                   = 17.104
+           STAND_LON                      = -98
+           POLE_LAT                       = 90
+           POLE_LON                       = 0
+           GMT                            = 0
+           JULYR                          = 2018
+           JULDAY                         = 29
+           MAP_PROJ                       = 1
+           MAP_PROJ_CHAR                  = 'Lambert Conformal'
+           MMINLU                         = 'USGS'
+           NUM_LAND_CAT                   = 24
+           ISWATER                        = 16
+           ISLAKE                         = -1
+           ISICE                          = 24
+           ISURBAN                        = 1
+           ISOILWATER                     = 14
+Dimensions:
+           Time             = 241   (UNLIMITED)
+           DateStrLen       = 19
+           west_east        = 12
+           south_north      = 12
+           bottom_top       = 29
+           bottom_top_stag  = 30
+           soil_layers_stag = 4
+           west_east_stag   = 13
+           south_north_stag = 13
+Variables:
+    Times                
+           Size:       19x241
+           Dimensions: DateStrLen,Time
+           Datatype:   char
+    XLAT                 
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'LATITUDE, SOUTH IS NEGATIVE'
+                       units       = 'degree_north'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT'
+    XLONG                
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'LONGITUDE, WEST IS NEGATIVE'
+                       units       = 'degree_east'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT'
+    LU_INDEX             
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'LAND USE CATEGORY'
+                       units       = ''
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    ZNU                  
+           Size:       29x241
+           Dimensions: bottom_top,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'Z  '
+                       description = 'eta values on half (mass) levels'
+                       units       = ''
+                       stagger     = ''
+    ZNW                  
+           Size:       30x241
+           Dimensions: bottom_top_stag,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'Z  '
+                       description = 'eta values on full (w) levels'
+                       units       = ''
+                       stagger     = 'Z'
+    ZS                   
+           Size:       4x241
+           Dimensions: soil_layers_stag,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'Z  '
+                       description = 'DEPTHS OF CENTERS OF SOIL LAYERS'
+                       units       = 'm'
+                       stagger     = 'Z'
+    DZS                  
+           Size:       4x241
+           Dimensions: soil_layers_stag,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'Z  '
+                       description = 'THICKNESSES OF SOIL LAYERS'
+                       units       = 'm'
+                       stagger     = 'Z'
+    VAR_SSO              
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'variance of subgrid-scale orography'
+                       units       = 'm2'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    LAP_HGT              
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'Laplacian of orography'
+                       units       = 'm'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    U                    
+           Size:       13x12x29x241
+           Dimensions: west_east_stag,south_north,bottom_top,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XYZ'
+                       description = 'x-wind component'
+                       units       = 'm s-1'
+                       stagger     = 'X'
+                       coordinates = 'XLONG_U XLAT_U XTIME'
+    V                    
+           Size:       12x13x29x241
+           Dimensions: west_east,south_north_stag,bottom_top,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XYZ'
+                       description = 'y-wind component'
+                       units       = 'm s-1'
+                       stagger     = 'Y'
+                       coordinates = 'XLONG_V XLAT_V XTIME'
+    W                    
+           Size:       12x12x30x241
+           Dimensions: west_east,south_north,bottom_top_stag,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XYZ'
+                       description = 'z-wind component'
+                       units       = 'm s-1'
+                       stagger     = 'Z'
+                       coordinates = 'XLONG XLAT XTIME'
+    PH                   
+           Size:       12x12x30x241
+           Dimensions: west_east,south_north,bottom_top_stag,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XYZ'
+                       description = 'perturbation geopotential'
+                       units       = 'm2 s-2'
+                       stagger     = 'Z'
+                       coordinates = 'XLONG XLAT XTIME'
+    PHB                  
+           Size:       12x12x30x241
+           Dimensions: west_east,south_north,bottom_top_stag,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XYZ'
+                       description = 'base-state geopotential'
+                       units       = 'm2 s-2'
+                       stagger     = 'Z'
+                       coordinates = 'XLONG XLAT XTIME'
+    T                    
+           Size:       12x12x29x241
+           Dimensions: west_east,south_north,bottom_top,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XYZ'
+                       description = 'perturbation potential temperature (theta-t0)'
+                       units       = 'K'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    HFX_FORCE            
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = '0  '
+                       description = 'SCM ideal surface sensible heat flux'
+                       units       = 'W m-2'
+                       stagger     = ''
+    LH_FORCE             
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = '0  '
+                       description = 'SCM ideal surface latent heat flux'
+                       units       = 'W m-2'
+                       stagger     = ''
+    TSK_FORCE            
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = '0  '
+                       description = 'SCM ideal surface skin temperature'
+                       units       = 'W m-2'
+                       stagger     = ''
+    HFX_FORCE_TEND       
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = '0  '
+                       description = 'SCM ideal surface sensible heat flux tendency'
+                       units       = 'W m-2 s-1'
+                       stagger     = ''
+    LH_FORCE_TEND        
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = '0  '
+                       description = 'SCM ideal surface latent heat flux tendency'
+                       units       = 'W m-2 s-1'
+                       stagger     = ''
+    TSK_FORCE_TEND       
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = '0  '
+                       description = 'SCM ideal surface skin temperature tendency'
+                       units       = 'W m-2 s-1'
+                       stagger     = ''
+    MU                   
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'perturbation dry air mass in column'
+                       units       = 'Pa'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    MUB                  
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'base state dry air mass in column'
+                       units       = 'Pa'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    NEST_POS             
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = '-'
+                       units       = '-'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    P                    
+           Size:       12x12x29x241
+           Dimensions: west_east,south_north,bottom_top,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XYZ'
+                       description = 'perturbation pressure'
+                       units       = 'Pa'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    PB                   
+           Size:       12x12x29x241
+           Dimensions: west_east,south_north,bottom_top,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XYZ'
+                       description = 'BASE STATE PRESSURE'
+                       units       = 'Pa'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    FNM                  
+           Size:       29x241
+           Dimensions: bottom_top,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'Z  '
+                       description = 'upper weight for vertical stretching'
+                       units       = ''
+                       stagger     = ''
+    FNP                  
+           Size:       29x241
+           Dimensions: bottom_top,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'Z  '
+                       description = 'lower weight for vertical stretching'
+                       units       = ''
+                       stagger     = ''
+    RDNW                 
+           Size:       29x241
+           Dimensions: bottom_top,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'Z  '
+                       description = 'inverse d(eta) values between full (w) levels'
+                       units       = ''
+                       stagger     = ''
+    RDN                  
+           Size:       29x241
+           Dimensions: bottom_top,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'Z  '
+                       description = 'inverse d(eta) values between half (mass) levels'
+                       units       = ''
+                       stagger     = ''
+    DNW                  
+           Size:       29x241
+           Dimensions: bottom_top,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'Z  '
+                       description = 'd(eta) values between full (w) levels'
+                       units       = ''
+                       stagger     = ''
+    DN                   
+           Size:       29x241
+           Dimensions: bottom_top,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'Z  '
+                       description = 'd(eta) values between half (mass) levels'
+                       units       = ''
+                       stagger     = ''
+    CFN                  
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = '0  '
+                       description = 'extrapolation constant'
+                       units       = ''
+                       stagger     = ''
+    CFN1                 
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = '0  '
+                       description = 'extrapolation constant'
+                       units       = ''
+                       stagger     = ''
+    THIS_IS_AN_IDEAL_RUN 
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   int32
+           Attributes:
+                       FieldType   = 106
+                       MemoryOrder = '0  '
+                       description = 'T/F flag: this is an ARW ideal simulation'
+                       units       = '-'
+                       stagger     = ''
+    P_HYD                
+           Size:       12x12x29x241
+           Dimensions: west_east,south_north,bottom_top,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XYZ'
+                       description = 'hydrostatic pressure'
+                       units       = 'Pa'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    Q2                   
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'QV at 2 M'
+                       units       = 'kg kg-1'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    T2                   
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'TEMP at 2 M'
+                       units       = 'K'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    TH2                  
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'POT TEMP at 2 M'
+                       units       = 'K'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    PSFC                 
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'SFC PRESSURE'
+                       units       = 'Pa'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    U10                  
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'U at 10 M'
+                       units       = 'm s-1'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    V10                  
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'V at 10 M'
+                       units       = 'm s-1'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    RDX                  
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = '0  '
+                       description = 'INVERSE X GRID LENGTH'
+                       units       = ''
+                       stagger     = ''
+    RDY                  
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = '0  '
+                       description = 'INVERSE Y GRID LENGTH'
+                       units       = ''
+                       stagger     = ''
+    RESM                 
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = '0  '
+                       description = 'TIME WEIGHT CONSTANT FOR SMALL STEPS'
+                       units       = ''
+                       stagger     = ''
+    ZETATOP              
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = '0  '
+                       description = 'ZETA AT MODEL TOP'
+                       units       = ''
+                       stagger     = ''
+    CF1                  
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = '0  '
+                       description = '2nd order extrapolation constant'
+                       units       = ''
+                       stagger     = ''
+    CF2                  
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = '0  '
+                       description = '2nd order extrapolation constant'
+                       units       = ''
+                       stagger     = ''
+    CF3                  
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = '0  '
+                       description = '2nd order extrapolation constant'
+                       units       = ''
+                       stagger     = ''
+    ITIMESTEP            
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   int32
+           Attributes:
+                       FieldType   = 106
+                       MemoryOrder = '0  '
+                       description = ''
+                       units       = ''
+                       stagger     = ''
+    XTIME                
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = '0  '
+                       description = 'minutes since 2018-01-29 00:00:00'
+                       units       = 'minutes since 2018-01-29 00:00:00'
+                       stagger     = ''
+    QVAPOR               
+           Size:       12x12x29x241
+           Dimensions: west_east,south_north,bottom_top,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XYZ'
+                       description = 'Water vapor mixing ratio'
+                       units       = 'kg kg-1'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    QCLOUD               
+           Size:       12x12x29x241
+           Dimensions: west_east,south_north,bottom_top,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XYZ'
+                       description = 'Cloud water mixing ratio'
+                       units       = 'kg kg-1'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    QRAIN                
+           Size:       12x12x29x241
+           Dimensions: west_east,south_north,bottom_top,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XYZ'
+                       description = 'Rain water mixing ratio'
+                       units       = 'kg kg-1'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    SHDMAX               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'ANNUAL MAX VEG FRACTION'
+                       units       = ''
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    SHDMIN               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'ANNUAL MIN VEG FRACTION'
+                       units       = ''
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    SNOALB               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'ANNUAL MAX SNOW ALBEDO IN FRACTION'
+                       units       = ''
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    TSLB                 
+           Size:       12x12x4x241
+           Dimensions: west_east,south_north,soil_layers_stag,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XYZ'
+                       description = 'SOIL TEMPERATURE'
+                       units       = 'K'
+                       stagger     = 'Z'
+                       coordinates = 'XLONG XLAT XTIME'
+    SMOIS                
+           Size:       12x12x4x241
+           Dimensions: west_east,south_north,soil_layers_stag,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XYZ'
+                       description = 'SOIL MOISTURE'
+                       units       = 'm3 m-3'
+                       stagger     = 'Z'
+                       coordinates = 'XLONG XLAT XTIME'
+    SH2O                 
+           Size:       12x12x4x241
+           Dimensions: west_east,south_north,soil_layers_stag,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XYZ'
+                       description = 'SOIL LIQUID WATER'
+                       units       = 'm3 m-3'
+                       stagger     = 'Z'
+                       coordinates = 'XLONG XLAT XTIME'
+    SMCREL               
+           Size:       12x12x4x241
+           Dimensions: west_east,south_north,soil_layers_stag,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XYZ'
+                       description = 'RELATIVE SOIL MOISTURE'
+                       units       = ''
+                       stagger     = 'Z'
+                       coordinates = 'XLONG XLAT XTIME'
+    SEAICE               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'SEA ICE FLAG'
+                       units       = ''
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    XICEM                
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'SEA ICE FLAG (PREVIOUS STEP)'
+                       units       = ''
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    SFROFF               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'SURFACE RUNOFF'
+                       units       = 'mm'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    UDROFF               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'UNDERGROUND RUNOFF'
+                       units       = 'mm'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    IVGTYP               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   int32
+           Attributes:
+                       FieldType   = 106
+                       MemoryOrder = 'XY '
+                       description = 'DOMINANT VEGETATION CATEGORY'
+                       units       = ''
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    ISLTYP               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   int32
+           Attributes:
+                       FieldType   = 106
+                       MemoryOrder = 'XY '
+                       description = 'DOMINANT SOIL CATEGORY'
+                       units       = ''
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    VEGFRA               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'VEGETATION FRACTION'
+                       units       = ''
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    GRDFLX               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'GROUND HEAT FLUX'
+                       units       = 'W m-2'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    ACGRDFLX             
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'ACCUMULATED GROUND HEAT FLUX'
+                       units       = 'J m-2'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    ACSNOM               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'ACCUMULATED MELTED SNOW'
+                       units       = 'kg m-2'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    SNOW                 
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'SNOW WATER EQUIVALENT'
+                       units       = 'kg m-2'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    SNOWH                
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'PHYSICAL SNOW DEPTH'
+                       units       = 'm'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    CANWAT               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'CANOPY WATER'
+                       units       = 'kg m-2'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    SSTSK                
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'SKIN SEA SURFACE TEMPERATURE'
+                       units       = 'K'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    COSZEN               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'COS of SOLAR ZENITH ANGLE'
+                       units       = 'dimensionless'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    LAI                  
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'LEAF AREA INDEX'
+                       units       = 'm-2/m-2'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    VAR                  
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'OROGRAPHIC VARIANCE'
+                       units       = ''
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    MAPFAC_M             
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'Map scale factor on mass grid'
+                       units       = ''
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    MAPFAC_U             
+           Size:       13x12x241
+           Dimensions: west_east_stag,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'Map scale factor on u-grid'
+                       units       = ''
+                       stagger     = 'X'
+                       coordinates = 'XLONG_U XLAT_U XTIME'
+    MAPFAC_V             
+           Size:       12x13x241
+           Dimensions: west_east,south_north_stag,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'Map scale factor on v-grid'
+                       units       = ''
+                       stagger     = 'Y'
+                       coordinates = 'XLONG_V XLAT_V XTIME'
+    MAPFAC_MX            
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'Map scale factor on mass grid, x direction'
+                       units       = ''
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    MAPFAC_MY            
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'Map scale factor on mass grid, y direction'
+                       units       = ''
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    MAPFAC_UX            
+           Size:       13x12x241
+           Dimensions: west_east_stag,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'Map scale factor on u-grid, x direction'
+                       units       = ''
+                       stagger     = 'X'
+                       coordinates = 'XLONG_U XLAT_U XTIME'
+    MAPFAC_UY            
+           Size:       13x12x241
+           Dimensions: west_east_stag,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'Map scale factor on u-grid, y direction'
+                       units       = ''
+                       stagger     = 'X'
+                       coordinates = 'XLONG_U XLAT_U XTIME'
+    MAPFAC_VX            
+           Size:       12x13x241
+           Dimensions: west_east,south_north_stag,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'Map scale factor on v-grid, x direction'
+                       units       = ''
+                       stagger     = 'Y'
+                       coordinates = 'XLONG_V XLAT_V XTIME'
+    MF_VX_INV            
+           Size:       12x13x241
+           Dimensions: west_east,south_north_stag,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'Inverse map scale factor on v-grid, x direction'
+                       units       = ''
+                       stagger     = 'Y'
+                       coordinates = 'XLONG_V XLAT_V XTIME'
+    MAPFAC_VY            
+           Size:       12x13x241
+           Dimensions: west_east,south_north_stag,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'Map scale factor on v-grid, y direction'
+                       units       = ''
+                       stagger     = 'Y'
+                       coordinates = 'XLONG_V XLAT_V XTIME'
+    F                    
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'Coriolis sine latitude term'
+                       units       = 's-1'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    E                    
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'Coriolis cosine latitude term'
+                       units       = 's-1'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    SINALPHA             
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'Local sine of map rotation'
+                       units       = ''
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    COSALPHA             
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'Local cosine of map rotation'
+                       units       = ''
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    HGT                  
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'Terrain Height'
+                       units       = 'm'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    TSK                  
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'SURFACE SKIN TEMPERATURE'
+                       units       = 'K'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    P_TOP                
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = '0  '
+                       description = 'PRESSURE TOP OF THE MODEL'
+                       units       = 'Pa'
+                       stagger     = ''
+    T00                  
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = '0  '
+                       description = 'BASE STATE TEMPERATURE'
+                       units       = 'K'
+                       stagger     = ''
+    P00                  
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = '0  '
+                       description = 'BASE STATE PRESURE'
+                       units       = 'Pa'
+                       stagger     = ''
+    TLP                  
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = '0  '
+                       description = 'BASE STATE LAPSE RATE'
+                       units       = ''
+                       stagger     = ''
+    TISO                 
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = '0  '
+                       description = 'TEMP AT WHICH THE BASE T TURNS CONST'
+                       units       = 'K'
+                       stagger     = ''
+    TLP_STRAT            
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = '0  '
+                       description = 'BASE STATE LAPSE RATE (DT/D(LN(P)) IN STRATOSPHERE'
+                       units       = 'K'
+                       stagger     = ''
+    P_STRAT              
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = '0  '
+                       description = 'BASE STATE PRESSURE AT BOTTOM OF STRATOSPHERE'
+                       units       = 'Pa'
+                       stagger     = ''
+    MAX_MSTFX            
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = '0  '
+                       description = 'Max map factor in domain'
+                       units       = ''
+                       stagger     = ''
+    MAX_MSTFY            
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = '0  '
+                       description = 'Max map factor in domain'
+                       units       = ''
+                       stagger     = ''
+    RAINC                
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'ACCUMULATED TOTAL CUMULUS PRECIPITATION'
+                       units       = 'mm'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    RAINSH               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'ACCUMULATED SHALLOW CUMULUS PRECIPITATION'
+                       units       = 'mm'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    RAINNC               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'ACCUMULATED TOTAL GRID SCALE PRECIPITATION'
+                       units       = 'mm'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    SNOWNC               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'ACCUMULATED TOTAL GRID SCALE SNOW AND ICE'
+                       units       = 'mm'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    GRAUPELNC            
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'ACCUMULATED TOTAL GRID SCALE GRAUPEL'
+                       units       = 'mm'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    HAILNC               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'ACCUMULATED TOTAL GRID SCALE HAIL'
+                       units       = 'mm'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    CLDFRA               
+           Size:       12x12x29x241
+           Dimensions: west_east,south_north,bottom_top,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XYZ'
+                       description = 'CLOUD FRACTION'
+                       units       = ''
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    SWDOWN               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'DOWNWARD SHORT WAVE FLUX AT GROUND SURFACE'
+                       units       = 'W m-2'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    GLW                  
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'DOWNWARD LONG WAVE FLUX AT GROUND SURFACE'
+                       units       = 'W m-2'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    SWNORM               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'NORMAL SHORT WAVE FLUX AT GROUND SURFACE (SLOPE-DEPENDENT)'
+                       units       = 'W m-2'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    DIFFUSE_FRAC         
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'DIFFUSE FRACTION OF SURFACE SHORTWAVE IRRADIANCE'
+                       units       = ''
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    OLR                  
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'TOA OUTGOING LONG WAVE'
+                       units       = 'W m-2'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    XLAT_U               
+           Size:       13x12x241
+           Dimensions: west_east_stag,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'LATITUDE, SOUTH IS NEGATIVE'
+                       units       = 'degree_north'
+                       stagger     = 'X'
+                       coordinates = 'XLONG_U XLAT_U'
+    XLONG_U              
+           Size:       13x12x241
+           Dimensions: west_east_stag,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'LONGITUDE, WEST IS NEGATIVE'
+                       units       = 'degree_east'
+                       stagger     = 'X'
+                       coordinates = 'XLONG_U XLAT_U'
+    XLAT_V               
+           Size:       12x13x241
+           Dimensions: west_east,south_north_stag,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'LATITUDE, SOUTH IS NEGATIVE'
+                       units       = 'degree_north'
+                       stagger     = 'Y'
+                       coordinates = 'XLONG_V XLAT_V'
+    XLONG_V              
+           Size:       12x13x241
+           Dimensions: west_east,south_north_stag,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'LONGITUDE, WEST IS NEGATIVE'
+                       units       = 'degree_east'
+                       stagger     = 'Y'
+                       coordinates = 'XLONG_V XLAT_V'
+    ALBEDO               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'ALBEDO'
+                       units       = '-'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    CLAT                 
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'COMPUTATIONAL GRID LATITUDE, SOUTH IS NEGATIVE'
+                       units       = 'degree_north'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    ALBBCK               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'BACKGROUND ALBEDO'
+                       units       = ''
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    EMISS                
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'SURFACE EMISSIVITY'
+                       units       = ''
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    NOAHRES              
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'RESIDUAL OF THE NOAH SURFACE ENERGY BUDGET'
+                       units       = 'W m{-2}'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    TMN                  
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'SOIL TEMPERATURE AT LOWER BOUNDARY'
+                       units       = 'K'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    XLAND                
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'LAND MASK (1 FOR LAND, 2 FOR WATER)'
+                       units       = ''
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    UST                  
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'U* IN SIMILARITY THEORY'
+                       units       = 'm s-1'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    PBLH                 
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'PBL HEIGHT'
+                       units       = 'm'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    HFX                  
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'UPWARD HEAT FLUX AT THE SURFACE'
+                       units       = 'W m-2'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    QFX                  
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'UPWARD MOISTURE FLUX AT THE SURFACE'
+                       units       = 'kg m-2 s-1'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    LH                   
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'LATENT HEAT FLUX AT THE SURFACE'
+                       units       = 'W m-2'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    ACHFX                
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'ACCUMULATED UPWARD HEAT FLUX AT THE SURFACE'
+                       units       = 'J m-2'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    ACLHF                
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'ACCUMULATED UPWARD LATENT HEAT FLUX AT THE SURFACE'
+                       units       = 'J m-2'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    SNOWC                
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'FLAG INDICATING SNOW COVERAGE (1 FOR SNOW COVER)'
+                       units       = ''
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    SR                   
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'fraction of frozen precipitation'
+                       units       = '-'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    SAVE_TOPO_FROM_REAL  
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   int32
+           Attributes:
+                       FieldType   = 106
+                       MemoryOrder = '0  '
+                       description = '1=original topo from real/0=topo modified by WRF'
+                       units       = 'flag'
+                       stagger     = ''
+    ISEEDARR_RAND_PERTURB
+           Size:       29x241
+           Dimensions: bottom_top,Time
+           Datatype:   int32
+           Attributes:
+                       FieldType   = 106
+                       MemoryOrder = 'Z  '
+                       description = 'Array to hold seed for restart, RAND_PERT'
+                       units       = ''
+                       stagger     = ''
+    ISEEDARR_SPPT        
+           Size:       29x241
+           Dimensions: bottom_top,Time
+           Datatype:   int32
+           Attributes:
+                       FieldType   = 106
+                       MemoryOrder = 'Z  '
+                       description = 'Array to hold seed for restart, SPPT'
+                       units       = ''
+                       stagger     = ''
+    ISEEDARR_SKEBS       
+           Size:       29x241
+           Dimensions: bottom_top,Time
+           Datatype:   int32
+           Attributes:
+                       FieldType   = 106
+                       MemoryOrder = 'Z  '
+                       description = 'Array to hold seed for restart, SKEBS'
+                       units       = ''
+                       stagger     = ''
+    LANDMASK             
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'LAND MASK (1 FOR LAND, 0 FOR WATER)'
+                       units       = ''
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    LAKEMASK             
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'LAKE MASK (1 FOR LAKE, 0 FOR NON-LAKE)'
+                       units       = ''
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    SST                  
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'SEA SURFACE TEMPERATURE'
+                       units       = 'K'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+    SST_INPUT            
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+           Attributes:
+                       FieldType   = 104
+                       MemoryOrder = 'XY '
+                       description = 'SEA SURFACE TEMPERATURE FROM WRFLOWINPUT FILE'
+                       units       = 'K'
+                       stagger     = ''
+                       coordinates = 'XLONG XLAT XTIME'
+>> 

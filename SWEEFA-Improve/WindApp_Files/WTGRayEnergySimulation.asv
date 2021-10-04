@@ -1,0 +1,725 @@
+function [EnergyParameters_T1,EnergyParameters_T2,EnergyParameters_T3,EnergyParameters_T4] = WTGRayEnergySimulation( SimParameters,AllParameters,WindLossParameters )
+
+%% AllParameters 
+
+% Disintegrating Cell AllParameters
+
+WG_TurbineType=AllParameters{1,1} ;
+Parameters_T1=AllParameters{1,2} ;
+Parameters_T2=AllParameters{1,3} ;
+Parameters_T3=AllParameters{1,4} ;
+Parameters_T4=AllParameters{1,5} ;
+
+% Disintegrating WG_TurbineType
+
+T1=WG_TurbineType(1,1) ;
+T2=WG_TurbineType(1,2) ;
+T3=WG_TurbineType(1,3) ;
+T4=WG_TurbineType(1,4) ;
+
+% Disintegrating Parameters_T1
+
+sub_T1=Parameters_T1{1,1} ;
+subnum_T1=Parameters_T1{1,2} ;
+hub_T1=Parameters_T1{1,3} ;
+Power_T1=Parameters_T1{1,4} ;
+cutin_T1=Parameters_T1{1,5} ;
+rated_T1=Parameters_T1{1,6} ;
+cutout_T1=Parameters_T1{1,7} ;
+rotrad_T1=Parameters_T1{1,8} ;
+
+% Disintegrating Parameters_T2
+
+sub_T2=Parameters_T2{1,1} ;
+subnum_T2=Parameters_T2{1,2} ;
+hub_T2=Parameters_T2{1,3} ;
+Power_T2=Parameters_T2{1,4} ;
+cutin_T2=Parameters_T2{1,5} ;
+rated_T2=Parameters_T2{1,6} ;
+cutout_T2=Parameters_T2{1,7} ;
+rotrad_T2=Parameters_T2{1,8} ;
+
+% Disintegrating Parameters_T3
+
+sub_T3=Parameters_T3{1,1} ;
+subnum_T3=Parameters_T3{1,2} ;
+hub_T3=Parameters_T3{1,3} ;
+Power_T3=Parameters_T3{1,4} ;
+cutin_T3=Parameters_T3{1,5} ;
+rated_T3=Parameters_T3{1,6} ;
+cutout_T3=Parameters_T3{1,7} ;
+rotrad_T3=Parameters_T3{1,8} ;
+
+% Disintegrating Parameters_T4
+
+sub_T4=Parameters_T4{1,1} ;
+subnum_T4=Parameters_T4{1,2} ;
+hub_T4=Parameters_T4{1,3} ;
+Power_T4=Parameters_T4{1,4} ;
+cutin_T4=Parameters_T4{1,5} ;
+rated_T4=Parameters_T4{1,6} ;
+cutout_T4=Parameters_T4{1,7} ;
+rotrad_T4=Parameters_T4{1,8} ;
+
+%% SimParameters
+
+% Disintegrating Cell SimParameters
+
+Altitude=SimParameters{1,1} ;
+v=SimParameters{1,2} ;
+Hhour=SimParameters{1,3} ;
+DenNew=SimParameters{1,4} ;
+WRes=SimParameters{1,5};
+
+%% WindLossParameters
+
+% Disintegrating Cell SimParameters
+
+Wake1=WindLossParameters{1,1} ;
+Wake2=WindLossParameters{1,2} ;
+DenSTC=WindLossParameters{1,3} ;
+OhmicLoss=WindLossParameters{1,4} ;
+TransLoss=WindLossParameters{1,5} ;
+WakeLoss=WindLossParameters{1,6} ;
+WakeModelParameters=WindLossParameters{1,7} ;
+Perf_Rat=WindLossParameters{1,8} ;
+Turbine_File=WindLossParameters{1,9} ;
+PR=WindLossParameters{1,10} ;
+ActiveTurbines=WindLossParameters{1,11} ;
+Terrain=WindLossParameters{1,12} ;
+HeightAnemometer=WindLossParameters{1,13} ;
+
+% Disintegrating Cell WakeModelParameters
+
+Jensen=WakeModelParameters{1,1} ; 
+Frandsen=WakeModelParameters{1,2} ; 
+a_J=WakeModelParameters{1,3} ; 
+k_J=WakeModelParameters{1,4} ; 
+x_J=WakeModelParameters{1,5} ; 
+a_F=WakeModelParameters{1,6} ; 
+k_F=WakeModelParameters{1,7} ; 
+x_F=WakeModelParameters{1,8} ; 
+alpha=WakeModelParameters{1,9} ; 
+
+% Disintegrating Cell ActiveTurbines
+
+ActiveTurbines_T1=ActiveTurbines{1,1};
+ActiveTurbines_T2=ActiveTurbines{1,2};
+ActiveTurbines_T3=ActiveTurbines{1,3};
+ActiveTurbines_T4=ActiveTurbines{1,4};
+
+%% Computing Total Simulation Points
+
+Len_Sim=length(v);
+
+EnergyConverter=Hhour*WRes;
+
+%% Number of SubModels of Each WTG Type
+
+Len_T1=sub_T1;
+Len_T2=sub_T2;
+Len_T3=sub_T3;
+Len_T4=sub_T4;
+
+LenWTG=[Len_T1,Len_T2,Len_T3,Len_T4];
+
+
+
+%% Initializing Computed Power and Power Loss Vectors
+
+% For WTG1
+
+WTGOutEnergy_T1=zeros(sub_T1,1);
+WTGPowerGridEnergy_T1=zeros(sub_T1,1);
+WTGOhmicLossEnergy_T1=zeros(sub_T1,1);
+WTGTransLossEnergy_T1=zeros(sub_T1,1);
+
+% For WTG2
+
+WTGOutEnergy_T2=zeros(sub_T2,1);
+WTGPowerGridEnergy_T2=zeros(sub_T2,1);
+WTGOhmicLossEnergy_T2=zeros(sub_T2,1);
+WTGTransLossEnergy_T2=zeros(sub_T2,1);
+
+% For WTG3
+
+WTGOutEnergy_T3=zeros(sub_T3,1);
+WTGPowerGridEnergy_T3=zeros(sub_T3,1);
+WTGOhmicLossEnergy_T3=zeros(sub_T3,1);
+WTGTransLossEnergy_T3=zeros(sub_T3,1);
+
+% For WTG4
+
+WTGOutEnergy_T4=zeros(sub_T4,1);
+WTGPowerGridEnergy_T4=zeros(sub_T4,1);
+WTGOhmicLossEnergy_T4=zeros(sub_T4,1);
+WTGTransLossEnergy_T4=zeros(sub_T4,1);
+
+%% Initializing Energy Matrices
+
+% Creating EnergyMatrix for storing Intra-Day Energy Values to create an EXCEL File 
+
+EnergyMatrix=zeros(Len_Sim,5);
+EnergyMatrix(:,1)=v';
+
+% WTG1
+
+EnergyMATRIX_T1=zeros(Len_Sim,5,Len_T1);
+
+% WTG2
+
+EnergyMATRIX_T2=zeros(Len_Sim,5,Len_T2);
+
+% WTG3
+
+EnergyMATRIX_T3=zeros(Len_Sim,5,Len_T3);
+
+% WTG4
+
+EnergyMATRIX_T4=zeros(Len_Sim,5,Len_T4);
+
+
+%% WTG Level Simulation
+
+%% WTG1
+
+if (T1==1)
+    
+  % WTG Sub-Model Level Simulation
+  
+  for i=1:Len_T1      
+               
+        % Creating EnergyMATRIX for current PV Technology to create an EXCEL File        
+        
+        EnergyMATRIX_T1(:,:,i)=EnergyMatrix; % Initializing Correct Dates in EnergyMATRIX
+
+        % WindSpeed Level Simulation    
+        
+        for j=1:Len_Sim      
+                                      
+            j % For Debugging
+
+            % Correct WindSpeed and Temperature Values
+
+            WindSpeedMeasured=v(1,j);
+            
+            % Computing Effect of Hub-Height and Terrain on Wind Speed using external function                
+
+            [ WindCorrected1 ] = HubHeight_Terrain_EffectOnWindSpeed( WindSpeedMeasured,HeightAnemometer,hub_T1(1,i),Terrain );
+
+            % Computing Wake Effect on Wind Speed
+
+            if (Wake2==1)
+
+                if (Jensen==1)
+
+                    [ WindCorrected2 ] = JensenWakeEffect( a_J,rotrad_T1(1,i),x_J,k_J, WindCorrected1 );
+
+                elseif (Frandsen==1)
+
+                    [ WindCorrected2 ] = FrandsenWakeEffect(a_F,rotrad_T1(1,i),x_F,k_F,alpha, WindCorrected1 );
+
+                end
+
+            else
+
+                WindCorrected2=WindCorrected1;
+
+            end
+
+            % Computing Power Curve Point for the current instance
+
+            [ WTGPowerPoint ] = PowerCurvePoint_Capture(Power_T1{1,i}, WindCorrected2, cutin_T1(1,i), cutout_T1(1,i) ) ;   
+
+            % Computing Corrected Power Curve Point due to effect of Air Density            
+
+            [ WTGPowerPointCorrected ] = PowerCurveCorrection( WTGPowerPoint,DenSTC,DenNew );
+
+            % Computing Power Produced by Total Wind Turbines with effect of Performance Ratio and Active Wind Turbines
+
+            [WTGPowerTotal, WTGPowerPR  ] = WTGPowerOutput( WTGPowerPointCorrected, subnum_T1(1,i), Perf_Rat, Turbine_File, PR, ActiveTurbines_T1{1,1}, j  );
+
+            % Computing Wind Turbine Power Losses and Power Supplied to the Grid
+
+            [WTGPower,WTGOhmicLossP,WTGTransLossP,WTGPowerGrid] = WTGPowerLoss(WTGPowerPR, OhmicLoss, TransLoss, Wake1, WakeLoss);
+
+            % Filling the EnergyMATRIX
+
+            [II]= j; % Computing Correct Row Index for placing Intr-Day Energy Values
+
+            EnergyMATRIX_T1( II , 2, i)=WTGPower*EnergyConverter(1,j) ;
+            EnergyMATRIX_T1( II, 3, i)=WTGPowerGrid*EnergyConverter(1,j) ;
+            EnergyMATRIX_T1( II, 4, i)=WTGOhmicLossP*EnergyConverter(1,j) ;
+            EnergyMATRIX_T1( II, 5, i)=WTGTransLossP*EnergyConverter(1,j);
+
+            % Summing Up Power Losses and Power Available at various Stages of Conversion/Transfer
+
+            WTGOutEnergy_T1(i,1)=WTGOutEnergy_T1(i,1)+(WTGPower*EnergyConverter(1,j));
+            WTGPowerGridEnergy_T1(i,1)=WTGPowerGridEnergy_T1(i,1)+(WTGPowerGrid*EnergyConverter(1,j));
+            WTGOhmicLossEnergy_T1(i,1)=WTGOhmicLossEnergy_T1(i,1)+(WTGOhmicLossP*EnergyConverter(1,j));
+            WTGTransLossEnergy_T1(i,1)=WTGTransLossEnergy_T1(i,1)+(WTGTransLossP*EnergyConverter(1,j));           
+            
+            
+        end
+      
+      
+  end
+ 
+
+end
+
+%% WTG2
+
+if (T2==1)
+  % WTG Sub-Model Level Simulation
+  
+  for i=1:Len_T2      
+               
+        % Creating EnergyMATRIX for current PV Technology to create an EXCEL File        
+        
+        EnergyMATRIX_T2(:,:,i)=EnergyMatrix; % Initializing Correct Dates in EnergyMATRIX
+
+        % WindSpeed Level Simulation    
+        
+        for j=1:Len_Sim      
+                                      
+            
+
+            % Correct WindSpeed and Temperature Values
+
+            WindSpeedMeasured=v(1,j);
+            
+            % Computing Effect of Hub-Height and Terrain on Wind Speed using external function                
+
+            [ WindCorrected1 ] = HubHeight_Terrain_EffectOnWindSpeed( WindSpeedMeasured,HeightAnemometer,hub_T2(1,i),Terrain );
+
+            % Computing Wake Effect on Wind Speed
+
+            if (Wake2==1)
+
+                if (Jensen==1)
+
+                    [ WindCorrected2 ] = JensenWakeEffect( a_J,rotrad_T2(1,i),x_J,k_J, WindCorrected1 );
+
+                elseif (Frandsen==1)
+
+                    [ WindCorrected2 ] = FrandsenWakeEffect(a_F,rotrad_T2(1,i),x_F,k_F,alpha, WindCorrected1 );
+
+                end
+
+            else
+
+                WindCorrected2=WindCorrected1;
+
+            end
+
+            % Computing Power Curve Point for the current instance
+
+            [ WTGPowerPoint ] = PowerCurvePoint_Capture(Power_T2{1,i}, WindCorrected2, cutin_T2(1,i), cutout_T2(1,i) ) ;   
+
+            % Computing Corrected Power Curve Point due to effect of Air Density            
+
+            [ WTGPowerPointCorrected ] = PowerCurveCorrection( WTGPowerPoint,DenSTC,DenNew );
+
+            % Computing Power Produced by Total Wind Turbines with effect of Performance Ratio and Active Wind Turbines
+
+            [WTGPowerTotal, WTGPowerPR  ] = WTGPowerOutput( WTGPowerPointCorrected, subnum_T2(1,i), Perf_Rat, Turbine_File, PR, ActiveTurbines_T2{1,1}, j  );
+
+            % Computing Wind Turbine Power Losses and Power Supplied to the Grid
+
+            [WTGPower,WTGOhmicLossP,WTGTransLossP,WTGPowerGrid] = WTGPowerLoss(WTGPowerPR, OhmicLoss, TransLoss, Wake1, WakeLoss);
+
+            % Filling the EnergyMATRIX
+
+            [II]= j; % Computing Correct Row Index for placing Intr-Day Energy Values
+
+            EnergyMATRIX_T2( II , 2, i)=WTGPower*EnergyConverter(1,j) ;
+            EnergyMATRIX_T2( II, 3, i)=WTGPowerGrid*EnergyConverter(1,j) ;
+            EnergyMATRIX_T2( II, 4, i)=WTGOhmicLossP*EnergyConverter(1,j) ;
+            EnergyMATRIX_T2( II, 5, i)=WTGTransLossP*EnergyConverter(1,j);
+
+            % Summing Up Power Losses and Power Available at various Stages of Conversion/Transfer
+
+            WTGOutEnergy_T2(i,1)=WTGOutEnergy_T2(i,1)+(WTGPower*EnergyConverter(1,j));
+            WTGPowerGridEnergy_T2(i,1)=WTGPowerGridEnergy_T2(i,1)+(WTGPowerGrid*EnergyConverter(1,j));
+            WTGOhmicLossEnergy_T2(i,1)=WTGOhmicLossEnergy_T2(i,1)+(WTGOhmicLossP*EnergyConverter(1,j));
+            WTGTransLossEnergy_T2(i,1)=WTGTransLossEnergy_T2(i,1)+(WTGTransLossP*EnergyConverter(1,j));          
+            
+            
+        end
+      
+      
+  end  
+  
+end
+
+%% WTG3
+
+if (T3==1)
+  % WTG Sub-Model Level Simulation
+  
+  for i=1:Len_T3      
+               
+        % Creating EnergyMATRIX for current PV Technology to create an EXCEL File        
+        
+        EnergyMATRIX_T3(:,:,i)=EnergyMatrix; % Initializing Correct Dates in EnergyMATRIX
+
+        % WindSpeed Level Simulation    
+        
+        for j=1:Len_Sim      
+                                      
+            
+
+            % Correct WindSpeed and Temperature Values
+
+            WindSpeedMeasured=v(1,j);
+            
+            % Computing Effect of Hub-Height and Terrain on Wind Speed using external function                
+
+            [ WindCorrected1 ] = HubHeight_Terrain_EffectOnWindSpeed( WindSpeedMeasured,HeightAnemometer,hub_T3(1,i),Terrain );
+
+            % Computing Wake Effect on Wind Speed
+
+            if (Wake2==1)
+
+                if (Jensen==1)
+
+                    [ WindCorrected2 ] = JensenWakeEffect( a_J,rotrad_T3(1,i),x_J,k_J, WindCorrected1 );
+
+                elseif (Frandsen==1)
+
+                    [ WindCorrected2 ] = FrandsenWakeEffect(a_F,rotrad_T3(1,i),x_F,k_F,alpha, WindCorrected1 );
+
+                end
+
+            else
+
+                WindCorrected2=WindCorrected1;
+
+            end
+
+            % Computing Power Curve Point for the current instance
+
+            [ WTGPowerPoint ] = PowerCurvePoint_Capture(Power_T3{1,i}, WindCorrected2, cutin_T3(1,i), cutout_T3(1,i) ) ;   
+
+            % Computing Corrected Power Curve Point due to effect of Air Density            
+
+            [ WTGPowerPointCorrected ] = PowerCurveCorrection( WTGPowerPoint,DenSTC,DenNew );
+
+            % Computing Power Produced by Total Wind Turbines with effect of Performance Ratio and Active Wind Turbines
+
+            [WTGPowerTotal, WTGPowerPR  ] = WTGPowerOutput( WTGPowerPointCorrected, subnum_T3(1,i), Perf_Rat, Turbine_File, PR, ActiveTurbines_T3{1,1}, j  );
+
+            % Computing Wind Turbine Power Losses and Power Supplied to the Grid
+
+            [WTGPower,WTGOhmicLossP,WTGTransLossP,WTGPowerGrid] = WTGPowerLoss(WTGPowerPR, OhmicLoss, TransLoss, Wake1, WakeLoss);
+
+            % Filling the EnergyMATRIX
+
+            [II]= j; % Computing Correct Row Index for placing Intr-Day Energy Values
+
+            EnergyMATRIX_T3( II , 2, i)=WTGPower*EnergyConverter(1,j) ;
+            EnergyMATRIX_T3( II, 3, i)=WTGPowerGrid*EnergyConverter(1,j) ;
+            EnergyMATRIX_T3( II, 4, i)=WTGOhmicLossP*EnergyConverter(1,j) ;
+            EnergyMATRIX_T3( II, 5, i)=WTGTransLossP*EnergyConverter(1,j);
+
+            % Summing Up Power Losses and Power Available at various Stages of Conversion/Transfer
+
+            WTGOutEnergy_T3(i,1)=WTGOutEnergy_T3(i,1)+(WTGPower*EnergyConverter(1,j));
+            WTGPowerGridEnergy_T3(i,1)=WTGPowerGridEnergy_T3(i,1)+(WTGPowerGrid*EnergyConverter(1,j));
+            WTGOhmicLossEnergy_T3(i,1)=WTGOhmicLossEnergy_T3(i,1)+(WTGOhmicLossP*EnergyConverter(1,j));
+            WTGTransLossEnergy_T3(i,1)=WTGTransLossEnergy_T3(i,1)+(WTGTransLossP*EnergyConverter(1,j));          
+            
+            
+        end
+      
+      
+  end 
+      
+
+  
+end
+
+%% WTG4
+
+if (T4==1)
+    % WTG Sub-Model Level Simulation
+  
+  for i=1:Len_T4      
+               
+        % Creating EnergyMATRIX for current PV Technology to create an EXCEL File        
+        
+        EnergyMATRIX_T4(:,:,i)=EnergyMatrix; % Initializing Correct Dates in EnergyMATRIX
+
+        % WindSpeed Level Simulation    
+        
+        for j=1:Len_Sim      
+                                      
+            
+
+            % Correct WindSpeed and Temperature Values
+
+            WindSpeedMeasured=v(1,j);
+            
+            % Computing Effect of Hub-Height and Terrain on Wind Speed using external function                
+
+            [ WindCorrected1 ] = HubHeight_Terrain_EffectOnWindSpeed( WindSpeedMeasured,HeightAnemometer,hub_T4(1,i),Terrain );
+
+            % Computing Wake Effect on Wind Speed
+
+            if (Wake2==1)
+
+                if (Jensen==1)
+
+                    [ WindCorrected2 ] = JensenWakeEffect( a_J,rotrad_T4(1,i),x_J,k_J, WindCorrected1 );
+
+                elseif (Frandsen==1)
+
+                    [ WindCorrected2 ] = FrandsenWakeEffect(a_F,rotrad_T4(1,i),x_F,k_F,alpha, WindCorrected1 );
+
+                end
+
+            else
+
+                WindCorrected2=WindCorrected1;
+
+            end
+
+            % Computing Power Curve Point for the current instance
+
+            [ WTGPowerPoint ] = PowerCurvePoint_Capture(Power_T4{1,i}, WindCorrected2, cutin_T4(1,i), cutout_T4(1,i) ) ;   
+
+            % Computing Corrected Power Curve Point due to effect of Air Density            
+
+            [ WTGPowerPointCorrected ] = PowerCurveCorrection( WTGPowerPoint,DenSTC,DenNew );
+
+            % Computing Power Produced by Total Wind Turbines with effect of Performance Ratio and Active Wind Turbines
+
+            [WTGPowerTotal, WTGPowerPR  ] = WTGPowerOutput( WTGPowerPointCorrected, subnum_T4(1,i), Perf_Rat, Turbine_File, PR, ActiveTurbines_T4{1,1}, j  );
+
+            % Computing Wind Turbine Power Losses and Power Supplied to the Grid
+
+            [WTGPower,WTGOhmicLossP,WTGTransLossP,WTGPowerGrid] = WTGPowerLoss(WTGPowerPR, OhmicLoss, TransLoss, Wake1, WakeLoss);
+
+            % Filling the EnergyMATRIX
+
+            [II]= j; % Computing Correct Row Index for placing Intr-Day Energy Values
+
+            EnergyMATRIX_T4( II , 2, i)=WTGPower*EnergyConverter(1,j) ;
+            EnergyMATRIX_T4( II, 3, i)=WTGPowerGrid*EnergyConverter(1,j) ;
+            EnergyMATRIX_T4( II, 4, i)=WTGOhmicLossP*EnergyConverter(1,j) ;
+            EnergyMATRIX_T4( II, 5, i)=WTGTransLossP*EnergyConverter(1,j);
+
+            % Summing Up Power Losses and Power Available at various Stages of Conversion/Transfer
+
+            WTGOutEnergy_T4(i,1)=WTGOutEnergy_T4(i,1)+(WTGPower*EnergyConverter(1,j));
+            WTGPowerGridEnergy_T4(i,1)=WTGPowerGridEnergy_T4(i,1)+(WTGPowerGrid*EnergyConverter(1,j));
+            WTGOhmicLossEnergy_T4(i,1)=WTGOhmicLossEnergy_T4(i,1)+(WTGOhmicLossP*EnergyConverter(1,j));
+            WTGTransLossEnergy_T4(i,1)=WTGTransLossEnergy_T4(i,1)+(WTGTransLossP*EnergyConverter(1,j));          
+            
+            
+        end
+      
+      
+  end 
+  
+end
+
+EnergyParameters_T1={WTGOutEnergy_T1,WTGPowerGridEnergy_T1,WTGOhmicLossEnergy_T1,WTGTransLossEnergy_T1};
+EnergyParameters_T2={WTGOutEnergy_T2,WTGPowerGridEnergy_T2,WTGOhmicLossEnergy_T2,WTGTransLossEnergy_T2};
+EnergyParameters_T3={WTGOutEnergy_T3,WTGPowerGridEnergy_T3,WTGOhmicLossEnergy_T3,WTGTransLossEnergy_T3};
+EnergyParameters_T4={WTGOutEnergy_T4,WTGPowerGridEnergy_T4,WTGOhmicLossEnergy_T4,WTGTransLossEnergy_T4};
+
+EnergyParametersAll={EnergyParameters_T1,EnergyParameters_T2,EnergyParameters_T3,EnergyParameters_T4};
+
+[ EnergyModTotCell_T1,EnergyModTotCell_T2,EnergyModTotCell_T3,EnergyModTotCell_T4 ] = WTGEnergyRayCalculator( EnergyParametersAll,LenWTG );
+
+
+
+
+%% Excel File Creation
+
+    HorizontalExcelTotal={'Total','WTGOutEnergy','WTGPowerGridEnergy','WTGOhmicLossEnergy','WTGTransLossEnergy'};
+    
+    HorizontalExcelWind={'WindSpeed','WTGOutEnergy','WTGPowerGridEnergy','WTGOhmicLossEnergy','WTGTransLossEnergy'};
+
+    
+% WTG1
+
+if (T1==1)
+
+    % Creating Excel Files from EnergyMATRIX Intra-Day Values
+    
+    for m=1:Len_T1
+       
+       if (m==1)
+           
+       filename = 'WindTurbinePlantEnergy(Type1)_WeibullDistribution.xlsx';
+       
+       sheet = m;
+
+       xlRange = 'A1';
+
+       xlswrite(filename,HorizontalExcelTotal',sheet,xlRange);        
+
+       sheet = m;
+
+       xlRange = 'B2';
+
+       xlswrite(filename,EnergyModTotCell_T1',sheet,xlRange);            
+           
+           
+       end
+        
+       filename = 'WindTurbinePlantEnergy(Type1)_WeibullDistribution.xlsx';
+       
+       sheet = m;
+
+       xlRange = 'A7';
+
+       xlswrite(filename,HorizontalExcelWind,sheet,xlRange);         
+
+       sheet = m;
+
+       xlRange = 'A8';
+
+       xlswrite(filename,EnergyMATRIX_T1(:,:,m),sheet,xlRange); 
+        
+    end
+    
+end
+
+% WTG2
+if (T2==1)
+
+    % Creating Excel Files from EnergyMATRIX Intra-Day Values
+    
+    for m=1:Len_T2
+        
+       if (m==1)
+           
+       filename = 'WindTurbinePlantEnergy(Type2)_WeibullDistribution.xlsx';
+       
+       sheet = m;
+
+       xlRange = 'A1';
+
+       xlswrite(filename,HorizontalExcelTotal',sheet,xlRange);        
+
+       sheet = m;
+
+       xlRange = 'B2';       
+
+       sheet = m;
+
+       xlRange = 'B1';
+
+       xlswrite(filename,EnergyModTotCell_T2',sheet,xlRange);            
+           
+           
+       end        
+        
+       filename = 'WindTurbinePlantEnergy(Type2)_WeibullDistribution.xlsx';
+
+       sheet = m;
+
+       xlRange = 'A7';
+
+       xlswrite(filename,EnergyMATRIX_T2(:,:,m),sheet,xlRange); 
+        
+    end      
+
+
+end
+
+% WTG3
+if (T3==1)
+
+    % Creating Excel Files from EnergyMATRIX Intra-Day Values
+    
+    for m=1:Len_T3
+        
+       if (m==1)
+           
+       filename = 'WindTurbinePlantEnergy(Type3)_WeibullDistribution.xlsx';
+       
+       sheet = m;
+
+       xlRange = 'A1';
+
+       xlswrite(filename,HorizontalExcelTotal',sheet,xlRange);        
+
+       sheet = m;
+
+       xlRange = 'B2';       
+
+       sheet = m;
+
+       xlRange = 'B1';
+
+       xlswrite(filename,EnergyModTotCell_T3',sheet,xlRange);            
+           
+           
+       end        
+        
+       filename = 'WindTurbinePlantEnergy(Type3)_WeibullDistribution.xlsx';
+
+       sheet = m;
+
+       xlRange = 'A7';
+
+       xlswrite(filename,EnergyMATRIX_T3(:,:,m),sheet,xlRange); 
+        
+    end  
+    
+
+
+end
+
+%WTG4
+if (T4==1)
+
+    % Creating Excel Files from EnergyMATRIX Intra-Day Values
+    
+    for m=1:Len_T4
+        
+       if (m==1)
+           
+       filename = 'WindTurbinePlantEnergy(Type4)_WeibullDistribution.xlsx';
+       
+       sheet = m;
+
+       xlRange = 'A1';
+
+       xlswrite(filename,HorizontalExcelTotal',sheet,xlRange);        
+
+       sheet = m;
+
+       xlRange = 'B2';       
+
+       sheet = m;
+
+       xlRange = 'B1';
+
+       xlswrite(filename,EnergyModTotCell_T4',sheet,xlRange);            
+           
+           
+       end        
+        
+       filename = 'WindTurbinePlantEnergy(Type4)_WeibullDistribution.xlsx';
+
+       sheet = m;
+
+       xlRange = 'A7';
+
+       xlswrite(filename,EnergyMATRIX_T4(:,:,m),sheet,xlRange); 
+        
+    end
+    
+    
+end
+
+end
+
+
+

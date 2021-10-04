@@ -1,0 +1,107 @@
+% Finding Start and End Days of the Data Set
+
+DateTimeStampStartday=strread(DataFile{2,1},'%s','delimiter',' ');
+
+% Start day Information
+
+StartDate=strread(DateTimeStampStartday{1,1},'%f','delimiter','/');
+
+StartMonth=StartDate(1,1)
+
+StartDay=StartDate(2,1)
+
+StartYear=StartDate(3,1)
+
+StartTime=strread(DateTimeStampStartday{2,1},'%f','delimiter',':');
+
+StartHour=StartTime(1,1)
+
+StartMin=StartTime(2,1)
+
+StartSec=StartTime(3,1)
+
+StartDayAmPm=strread(DateTimeStampStartday{3,1},'%s')
+
+[ StartTimeDeci ] = HMToDeci( StartHour,StartMin,StartSec )
+
+AmPm=strcmp(StartDayAmPm,'AM')
+
+if AmPm==1
+    
+    [ StartTimeDeci ] = HMToDeci( StartHour,StartMin,StartSec )
+    
+elseif AmPm==0
+    
+    [ StartTimeDeci ] = HMToDeci( StartHour,StartMin,StartSec )+12
+    
+end
+
+% End Day Information
+
+[rnum,colnum]=size(DataFile)
+
+DateTimeStampEndday=strread(DataFile{rnum,1},'%s','delimiter',' ');
+
+EndDate=strread(DateTimeStampEndday{1,1},'%f','delimiter','/');
+
+EndMonth=EndDate(1,1)
+
+EndDay=EndDate(2,1)
+
+EndYear=EndDate(3,1)
+
+EndTime=strread(DateTimeStampEndday{2,1},'%f','delimiter',':');
+
+EndHour=EndTime(1,1)
+
+EndMin=EndTime(2,1)
+
+EndSec=EndTime(3,1)
+
+EnddayAmPm=strread(DateTimeStampEndday{3,1},'%s')
+
+[ EndTimeDeci ] = HMToDeci( EndHour,EndMin,EndSec )
+
+AmPm=strcmp(EnddayAmPm,'AM')
+
+if AmPm==1
+    
+    [ EndTimeDeci ] = HMToDeci( EndHour,EndMin,EndSec )
+    
+elseif AmPm==0
+    
+    [ EndTimeDeci ] = HMToDeci( EndHour,EndMin,EndSec )+12
+    
+end
+
+% SD=28;
+% SM=1;
+% if SD==31
+%         
+%         SD=1;
+%         
+%     elseif SD==30
+%         
+%         for j=[4,6,9,11]
+%             
+%             if SM==j
+%                 
+%                 SD=1;
+%                 
+%                 break;
+%                 
+%             end
+%         end
+%         
+%     elseif ((SD==28)||(SD==29))&&(SM==2)
+%         
+%         SD=1;
+%         
+% end
+% SD
+    
+
+
+
+
+     

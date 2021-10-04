@@ -1,0 +1,581 @@
+Source:
+           E:\SavalsungData\Output_Data\WRF-Output\Post-Processed-WRF-NETCDF-Files\WRF_D01_2018-01-29
+Format:
+           classic
+Variables:
+    Times                
+           Size:       19x241
+           Dimensions: DateStrLen,Time
+           Datatype:   char
+    XLAT                 
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    XLONG                
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    LU_INDEX             
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    ZNU                  
+           Size:       29x241
+           Dimensions: bottom_top,Time
+           Datatype:   single
+    ZNW                  
+           Size:       30x241
+           Dimensions: bottom_top_stag,Time
+           Datatype:   single
+    ZS                   
+           Size:       4x241
+           Dimensions: soil_layers_stag,Time
+           Datatype:   single
+    DZS                  
+           Size:       4x241
+           Dimensions: soil_layers_stag,Time
+           Datatype:   single
+    VAR_SSO              
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    LAP_HGT              
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    U                    
+           Size:       13x12x29x241
+           Dimensions: west_east_stag,south_north,bottom_top,Time
+           Datatype:   single
+    V                    
+           Size:       12x13x29x241
+           Dimensions: west_east,south_north_stag,bottom_top,Time
+           Datatype:   single
+    W                    
+           Size:       12x12x30x241
+           Dimensions: west_east,south_north,bottom_top_stag,Time
+           Datatype:   single
+    PH                   
+           Size:       12x12x30x241
+           Dimensions: west_east,south_north,bottom_top_stag,Time
+           Datatype:   single
+    PHB                  
+           Size:       12x12x30x241
+           Dimensions: west_east,south_north,bottom_top_stag,Time
+           Datatype:   single
+    T                    
+           Size:       12x12x29x241
+           Dimensions: west_east,south_north,bottom_top,Time
+           Datatype:   single
+    HFX_FORCE            
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+    LH_FORCE             
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+    TSK_FORCE            
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+    HFX_FORCE_TEND       
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+    LH_FORCE_TEND        
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+    TSK_FORCE_TEND       
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+    MU                   
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    MUB                  
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    NEST_POS             
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    P                    
+           Size:       12x12x29x241
+           Dimensions: west_east,south_north,bottom_top,Time
+           Datatype:   single
+    PB                   
+           Size:       12x12x29x241
+           Dimensions: west_east,south_north,bottom_top,Time
+           Datatype:   single
+    FNM                  
+           Size:       29x241
+           Dimensions: bottom_top,Time
+           Datatype:   single
+    FNP                  
+           Size:       29x241
+           Dimensions: bottom_top,Time
+           Datatype:   single
+    RDNW                 
+           Size:       29x241
+           Dimensions: bottom_top,Time
+           Datatype:   single
+    RDN                  
+           Size:       29x241
+           Dimensions: bottom_top,Time
+           Datatype:   single
+    DNW                  
+           Size:       29x241
+           Dimensions: bottom_top,Time
+           Datatype:   single
+    DN                   
+           Size:       29x241
+           Dimensions: bottom_top,Time
+           Datatype:   single
+    CFN                  
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+    CFN1                 
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+    THIS_IS_AN_IDEAL_RUN 
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   int32
+    P_HYD                
+           Size:       12x12x29x241
+           Dimensions: west_east,south_north,bottom_top,Time
+           Datatype:   single
+    Q2                   
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    T2                   
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    TH2                  
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    PSFC                 
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    U10                  
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    V10                  
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    RDX                  
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+    RDY                  
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+    RESM                 
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+    ZETATOP              
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+    CF1                  
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+    CF2                  
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+    CF3                  
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+    ITIMESTEP            
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   int32
+    XTIME                
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+    QVAPOR               
+           Size:       12x12x29x241
+           Dimensions: west_east,south_north,bottom_top,Time
+           Datatype:   single
+    QCLOUD               
+           Size:       12x12x29x241
+           Dimensions: west_east,south_north,bottom_top,Time
+           Datatype:   single
+    QRAIN                
+           Size:       12x12x29x241
+           Dimensions: west_east,south_north,bottom_top,Time
+           Datatype:   single
+    SHDMAX               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    SHDMIN               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    SNOALB               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    TSLB                 
+           Size:       12x12x4x241
+           Dimensions: west_east,south_north,soil_layers_stag,Time
+           Datatype:   single
+    SMOIS                
+           Size:       12x12x4x241
+           Dimensions: west_east,south_north,soil_layers_stag,Time
+           Datatype:   single
+    SH2O                 
+           Size:       12x12x4x241
+           Dimensions: west_east,south_north,soil_layers_stag,Time
+           Datatype:   single
+    SMCREL               
+           Size:       12x12x4x241
+           Dimensions: west_east,south_north,soil_layers_stag,Time
+           Datatype:   single
+    SEAICE               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    XICEM                
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    SFROFF               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    UDROFF               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    IVGTYP               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   int32
+    ISLTYP               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   int32
+    VEGFRA               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    GRDFLX               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    ACGRDFLX             
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    ACSNOM               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    SNOW                 
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    SNOWH                
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    CANWAT               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    SSTSK                
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    COSZEN               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    LAI                  
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    VAR                  
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    MAPFAC_M             
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    MAPFAC_U             
+           Size:       13x12x241
+           Dimensions: west_east_stag,south_north,Time
+           Datatype:   single
+    MAPFAC_V             
+           Size:       12x13x241
+           Dimensions: west_east,south_north_stag,Time
+           Datatype:   single
+    MAPFAC_MX            
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    MAPFAC_MY            
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    MAPFAC_UX            
+           Size:       13x12x241
+           Dimensions: west_east_stag,south_north,Time
+           Datatype:   single
+    MAPFAC_UY            
+           Size:       13x12x241
+           Dimensions: west_east_stag,south_north,Time
+           Datatype:   single
+    MAPFAC_VX            
+           Size:       12x13x241
+           Dimensions: west_east,south_north_stag,Time
+           Datatype:   single
+    MF_VX_INV            
+           Size:       12x13x241
+           Dimensions: west_east,south_north_stag,Time
+           Datatype:   single
+    MAPFAC_VY            
+           Size:       12x13x241
+           Dimensions: west_east,south_north_stag,Time
+           Datatype:   single
+    F                    
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    E                    
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    SINALPHA             
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    COSALPHA             
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    HGT                  
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    TSK                  
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    P_TOP                
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+    T00                  
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+    P00                  
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+    TLP                  
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+    TISO                 
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+    TLP_STRAT            
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+    P_STRAT              
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+    MAX_MSTFX            
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+    MAX_MSTFY            
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   single
+    RAINC                
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    RAINSH               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    RAINNC               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    SNOWNC               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    GRAUPELNC            
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    HAILNC               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    CLDFRA               
+           Size:       12x12x29x241
+           Dimensions: west_east,south_north,bottom_top,Time
+           Datatype:   single
+    SWDOWN               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    GLW                  
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    SWNORM               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    DIFFUSE_FRAC         
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    OLR                  
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    XLAT_U               
+           Size:       13x12x241
+           Dimensions: west_east_stag,south_north,Time
+           Datatype:   single
+    XLONG_U              
+           Size:       13x12x241
+           Dimensions: west_east_stag,south_north,Time
+           Datatype:   single
+    XLAT_V               
+           Size:       12x13x241
+           Dimensions: west_east,south_north_stag,Time
+           Datatype:   single
+    XLONG_V              
+           Size:       12x13x241
+           Dimensions: west_east,south_north_stag,Time
+           Datatype:   single
+    ALBEDO               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    CLAT                 
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    ALBBCK               
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    EMISS                
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    NOAHRES              
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    TMN                  
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    XLAND                
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    UST                  
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    PBLH                 
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    HFX                  
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    QFX                  
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    LH                   
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    ACHFX                
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    ACLHF                
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    SNOWC                
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    SR                   
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    SAVE_TOPO_FROM_REAL  
+           Size:       241x1
+           Dimensions: Time
+           Datatype:   int32
+    ISEEDARR_RAND_PERTURB
+           Size:       29x241
+           Dimensions: bottom_top,Time
+           Datatype:   int32
+    ISEEDARR_SPPT        
+           Size:       29x241
+           Dimensions: bottom_top,Time
+           Datatype:   int32
+    ISEEDARR_SKEBS       
+           Size:       29x241
+           Dimensions: bottom_top,Time
+           Datatype:   int32
+    LANDMASK             
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    LAKEMASK             
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    SST                  
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single
+    SST_INPUT            
+           Size:       12x12x241
+           Dimensions: west_east,south_north,Time
+           Datatype:   single

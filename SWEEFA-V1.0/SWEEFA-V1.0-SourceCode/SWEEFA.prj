@@ -1,0 +1,348 @@
+<deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
+  <configuration build-checksum="2585190642" file="D:\Ninad Gaikwad\Documents\GERMI\Paper Publishing\MTLAB Programs\Application_EXE_Development\SolarWind_EnergyEstimation_Forecasting_App\SWEEFA.prj" location="D:\Ninad Gaikwad\Documents\GERMI\Paper Publishing\MTLAB Programs\Application_EXE_Development\SolarWind_EnergyEstimation_Forecasting_App" name="SWEEFA" preferred-package-location="D:\Ninad Gaikwad\Documents\GERMI\Paper Publishing\MTLAB Programs\Application_EXE_Development\SolarWind_EnergyEstimation_Forecasting_App\SWEEFA\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.standalone" target-name="Application Compiler">
+    <param.appname>SWEEFA</param.appname>
+    <param.icon>${PROJECT_ROOT}\SWEEFA_resources\icon.ico</param.icon>
+    <param.icons>
+      <file>${PROJECT_ROOT}\SWEEFA_resources\icon_48.png</file>
+      <file>${PROJECT_ROOT}\SWEEFA_resources\icon_32.png</file>
+      <file>${PROJECT_ROOT}\SWEEFA_resources\icon_24.png</file>
+      <file>${PROJECT_ROOT}\SWEEFA_resources\icon_16.png</file>
+    </param.icons>
+    <param.version>1.0</param.version>
+    <param.authnamewatermark>Ninad Kiran Gaikwad</param.authnamewatermark>
+    <param.email>ninad.g@germi.res.in</param.email>
+    <param.company>GERMI</param.company>
+    <param.summary>The Application is intended for Research purposes and not Commercial purposes.</param.summary>
+    <param.description>This Application consists of the following three major Apps:
+1. Solar_App: The user can do solar energy estimation and allied design computations
+2. Wind_App: User can do wind energy estimation and allied design computations
+3. Weather_Forecasting_App: User can do weather forecasting using ARIMA and ANN models and also visualize and extract from WRF generated NETCDF files</param.description>
+    <param.screenshot>${PROJECT_ROOT}\App_Images\FullApp_Splash_2.png</param.screenshot>
+    <param.guid />
+    <param.installpath.string>\GERMI\SWEEFA\</param.installpath.string>
+    <param.installpath.combo>option.installpath.programfiles</param.installpath.combo>
+    <param.logo />
+    <param.install.notes />
+    <param.target.install.notes />
+    <param.intermediate>${PROJECT_ROOT}\SWEEFA\for_testing</param.intermediate>
+    <param.files.only>${PROJECT_ROOT}\SWEEFA\for_redistribution_files_only</param.files.only>
+    <param.output>${PROJECT_ROOT}\SWEEFA\for_redistribution</param.output>
+    <param.enable.clean.build>false</param.enable.clean.build>
+    <param.user.defined.mcr.options />
+    <param.embed.ctf>true</param.embed.ctf>
+    <param.target.type>subtarget.standalone</param.target.type>
+    <param.support.packages />
+    <param.required.mcr.products>
+      <item>35000</item>
+      <item>35010</item>
+      <item>35001</item>
+    </param.required.mcr.products>
+    <param.web.mcr>false</param.web.mcr>
+    <param.package.mcr>true</param.package.mcr>
+    <param.no.mcr>false</param.no.mcr>
+    <param.web.mcr.name>MyAppInstaller_web</param.web.mcr.name>
+    <param.package.mcr.name>MyAppInstaller_mcr</param.package.mcr.name>
+    <param.no.mcr.name>MyAppInstaller_app</param.no.mcr.name>
+    <param.windows.command.prompt>true</param.windows.command.prompt>
+    <param.create.log>false</param.create.log>
+    <param.log.file />
+    <unset>
+      <param.version />
+      <param.authnamewatermark />
+      <param.email />
+      <param.company />
+      <param.guid />
+      <param.installpath.string />
+      <param.installpath.combo />
+      <param.logo />
+      <param.target.install.notes />
+      <param.intermediate />
+      <param.files.only />
+      <param.output />
+      <param.enable.clean.build />
+      <param.user.defined.mcr.options />
+      <param.embed.ctf />
+      <param.target.type />
+      <param.support.packages />
+      <param.no.mcr />
+      <param.web.mcr.name />
+      <param.package.mcr.name />
+      <param.no.mcr.name />
+      <param.windows.command.prompt />
+      <param.create.log />
+      <param.log.file />
+    </unset>
+    <fileset.main>
+      <file>${PROJECT_ROOT}\LicenseAgreement_GUI.m</file>
+    </fileset.main>
+    <fileset.resources>
+      <file>${PROJECT_ROOT}\ActualToPerUnit.m</file>
+      <file>${PROJECT_ROOT}\AirDensity.m</file>
+      <file>${PROJECT_ROOT}\AirMassRatio.m</file>
+      <file>${PROJECT_ROOT}\AltiAzi.m</file>
+      <file>${PROJECT_ROOT}\AltiAziMulDay.m</file>
+      <file>${PROJECT_ROOT}\Angstrom_figure.fig</file>
+      <file>${PROJECT_ROOT}\Angstrom_figure.m</file>
+      <file>${PROJECT_ROOT}\Angstrom_model.m</file>
+      <file>${PROJECT_ROOT}\ANN_Forecasting_GUI_1.fig</file>
+      <file>${PROJECT_ROOT}\ANN_Forecasting_GUI_1.m</file>
+      <file>${PROJECT_ROOT}\ANN_Performance_Plots.fig</file>
+      <file>${PROJECT_ROOT}\ANN_Performance_Plots.m</file>
+      <file>${PROJECT_ROOT}\AreaOfModules.m</file>
+      <file>${PROJECT_ROOT}\ARIMA_DataAcquisition_GUI.fig</file>
+      <file>${PROJECT_ROOT}\ARIMA_DataAcquisition_GUI.m</file>
+      <file>${PROJECT_ROOT}\ARIMA_ModelCreation_GUI.fig</file>
+      <file>${PROJECT_ROOT}\ARIMA_ModelCreation_GUI.m</file>
+      <file>${PROJECT_ROOT}\ARIMA_ModelEstimateViewer_GUI.fig</file>
+      <file>${PROJECT_ROOT}\ARIMA_ModelEstimateViewer_GUI.m</file>
+      <file>${PROJECT_ROOT}\ARIMA_ModelEstimation_GUI.fig</file>
+      <file>${PROJECT_ROOT}\ARIMA_ModelEstimation_GUI.m</file>
+      <file>${PROJECT_ROOT}\ARIMA_ModelForecast_GUI.fig</file>
+      <file>${PROJECT_ROOT}\ARIMA_ModelForecast_GUI.m</file>
+      <file>${PROJECT_ROOT}\ARIMA_ModelIdentification_GUI.fig</file>
+      <file>${PROJECT_ROOT}\ARIMA_ModelIdentification_GUI.m</file>
+      <file>${PROJECT_ROOT}\ARIMA_ModelSimulation_GUI.fig</file>
+      <file>${PROJECT_ROOT}\ARIMA_ModelSimulation_GUI.m</file>
+      <file>${PROJECT_ROOT}\ArrayIncidenceLoss.m</file>
+      <file>${PROJECT_ROOT}\BeamDiffGHI.m</file>
+      <file>${PROJECT_ROOT}\BeamDiffModel.m</file>
+      <file>${PROJECT_ROOT}\BeamDiffModelClearIndex.m</file>
+      <file>${PROJECT_ROOT}\BeamDiffModelRain.m</file>
+      <file>${PROJECT_ROOT}\ClearnessIndex.m</file>
+      <file>${PROJECT_ROOT}\ClearnessIndexDataCleaner.m</file>
+      <file>${PROJECT_ROOT}\ClockToSolarTime.m</file>
+      <file>${PROJECT_ROOT}\ComputeDHIFromGHI.m</file>
+      <file>${PROJECT_ROOT}\Cp_Curve_Generator_GUI.fig</file>
+      <file>${PROJECT_ROOT}\Cp_Curve_Generator_GUI.m</file>
+      <file>${PROJECT_ROOT}\Cpcurve.m</file>
+      <file>${PROJECT_ROOT}\Cpcurve1.m</file>
+      <file>${PROJECT_ROOT}\Cpcurve2.m</file>
+      <file>${PROJECT_ROOT}\CreateDateTimeMatrix.m</file>
+      <file>${PROJECT_ROOT}\CumulativeGenToActual.m</file>
+      <file>${PROJECT_ROOT}\Data_PreProcSys_GUI.fig</file>
+      <file>${PROJECT_ROOT}\Data_PreProcSys_GUI.m</file>
+      <file>${PROJECT_ROOT}\DataAcquisition_Wind_GUI_1.m</file>
+      <file>${PROJECT_ROOT}\DataAcquisition_Wind_GUI_MainPage.m</file>
+      <file>${PROJECT_ROOT}\DataAcquisition_Wind_Loss_Parameters_GUI.m</file>
+      <file>${PROJECT_ROOT}\DateTimeSeriesSlicer.m</file>
+      <file>${PROJECT_ROOT}\DaysToCompute.m</file>
+      <file>${PROJECT_ROOT}\DayToMonthDataCoverter.m</file>
+      <file>${PROJECT_ROOT}\DayToMonthDataCoverterApp.m</file>
+      <file>${PROJECT_ROOT}\DeciToHM.m</file>
+      <file>${PROJECT_ROOT}\Declination.m</file>
+      <file>${PROJECT_ROOT}\Distance.m</file>
+      <file>${PROJECT_ROOT}\DMYfile_To_AnnInputFile.m</file>
+      <file>${PROJECT_ROOT}\DMYfile_To_AnnInputFile1.m</file>
+      <file>${PROJECT_ROOT}\DoubleAxis.m</file>
+      <file>${PROJECT_ROOT}\DoubleAxis_Data.fig</file>
+      <file>${PROJECT_ROOT}\DoubleAxis_Data.m</file>
+      <file>${PROJECT_ROOT}\Fixed_Tilt_Data.fig</file>
+      <file>${PROJECT_ROOT}\Fixed_Tilt_Data.m</file>
+      <file>${PROJECT_ROOT}\FixedTilt.m</file>
+      <file>${PROJECT_ROOT}\FixedTilt1.m</file>
+      <file>${PROJECT_ROOT}\Forecasting_App_GUI.fig</file>
+      <file>${PROJECT_ROOT}\Forecasting_App_GUI.m</file>
+      <file>${PROJECT_ROOT}\FrandsenWakeEffect.m</file>
+      <file>${PROJECT_ROOT}\GearRatio_Calculator.m</file>
+      <file>${PROJECT_ROOT}\GHICompute.m</file>
+      <file>${PROJECT_ROOT}\GHIGauSinAvg.m</file>
+      <file>${PROJECT_ROOT}\GHIGaussianDistri.m</file>
+      <file>${PROJECT_ROOT}\GHIHHresIndex.m</file>
+      <file>${PROJECT_ROOT}\GHISinusoidalDistri.m</file>
+      <file>${PROJECT_ROOT}\HMToDeci.m</file>
+      <file>${PROJECT_ROOT}\HourAngle.m</file>
+      <file>${PROJECT_ROOT}\HourlyFileIndex.m</file>
+      <file>${PROJECT_ROOT}\HourlyFileIndex1.m</file>
+      <file>${PROJECT_ROOT}\HubHeight_Terrain_EffectOnWindSpeed.m</file>
+      <file>${PROJECT_ROOT}\InsolationToGHIConverter.m</file>
+      <file>${PROJECT_ROOT}\JensenWakeEffect.m</file>
+      <file>${PROJECT_ROOT}\JulianDay.m</file>
+      <file>${PROJECT_ROOT}\LeapYearFinder.m</file>
+      <file>${PROJECT_ROOT}\LicenseAgreement_GUI.fig</file>
+      <file>${PROJECT_ROOT}\LicenseAgreement_GUI.m</file>
+      <file>${PROJECT_ROOT}\Loss_Parameters.fig</file>
+      <file>${PROJECT_ROOT}\Loss_Parameters.m</file>
+      <file>${PROJECT_ROOT}\MINToDayDataCoverter.m</file>
+      <file>${PROJECT_ROOT}\MINToDayDataCoverterApp.m</file>
+      <file>${PROJECT_ROOT}\minToMINDataCoverter.m</file>
+      <file>${PROJECT_ROOT}\ModuleNumber.m</file>
+      <file>${PROJECT_ROOT}\ModulePower.m</file>
+      <file>${PROJECT_ROOT}\Month_Hours_MeanTemp_MeanWs.m</file>
+      <file>${PROJECT_ROOT}\NETCDF_TEST_GUI.fig</file>
+      <file>${PROJECT_ROOT}\NETCDF_TEST_GUI.m</file>
+      <file>${PROJECT_ROOT}\ohmic_loss_figure.fig</file>
+      <file>${PROJECT_ROOT}\ohmic_loss_figure.m</file>
+      <file>${PROJECT_ROOT}\ohmic_losses.m</file>
+      <file>${PROJECT_ROOT}\Perez_Figure.fig</file>
+      <file>${PROJECT_ROOT}\Perez_Figure.m</file>
+      <file>${PROJECT_ROOT}\Perez_model.m</file>
+      <file>${PROJECT_ROOT}\PerUnitToActual.m</file>
+      <file>${PROJECT_ROOT}\PlantInfo_GUI.fig</file>
+      <file>${PROJECT_ROOT}\PlantInfo_GUI.m</file>
+      <file>${PROJECT_ROOT}\Plot_Test_Positive.m</file>
+      <file>${PROJECT_ROOT}\PowerCurve_Plot_Test.m</file>
+      <file>${PROJECT_ROOT}\PowerCurveCorrection.m</file>
+      <file>${PROJECT_ROOT}\PowerCurvePoint_Capture.m</file>
+      <file>${PROJECT_ROOT}\PressureAtHeight.m</file>
+      <file>${PROJECT_ROOT}\PUConverter_GUI.fig</file>
+      <file>${PROJECT_ROOT}\PUConverter_GUI.m</file>
+      <file>${PROJECT_ROOT}\PV_IV_Curve_GUI.fig</file>
+      <file>${PROJECT_ROOT}\PV_IV_Curve_GUI.m</file>
+      <file>${PROJECT_ROOT}\PV_IV_Shading.m</file>
+      <file>${PROJECT_ROOT}\PVEnergyCalculator.m</file>
+      <file>${PROJECT_ROOT}\PVGenerationCurveFitting.m</file>
+      <file>${PROJECT_ROOT}\PVivCurve.m</file>
+      <file>${PROJECT_ROOT}\PVoutputPower.m</file>
+      <file>${PROJECT_ROOT}\PVPlantInformationSheet.m</file>
+      <file>${PROJECT_ROOT}\PvPlantPerformance.m</file>
+      <file>${PROJECT_ROOT}\PVRsRp.m</file>
+      <file>${PROJECT_ROOT}\PVRsRpSingleCell.m</file>
+      <file>${PROJECT_ROOT}\RainSnowMonthDays.m</file>
+      <file>${PROJECT_ROOT}\Rainy_Snowy_Months.fig</file>
+      <file>${PROJECT_ROOT}\Rainy_Snowy_Months.m</file>
+      <file>${PROJECT_ROOT}\RandomWindSpeedFileGenerator.m</file>
+      <file>${PROJECT_ROOT}\Rayleigh_Test.m</file>
+      <file>${PROJECT_ROOT}\Refl_TwoLayerComposite.m</file>
+      <file>${PROJECT_ROOT}\ResFileIndex.m</file>
+      <file>${PROJECT_ROOT}\RowsColsToComputeDataCleaning.m</file>
+      <file>${PROJECT_ROOT}\Sample_Lic.txt</file>
+      <file>${PROJECT_ROOT}\Seasonal_Tilt_Data.fig</file>
+      <file>${PROJECT_ROOT}\Seasonal_Tilt_Data.m</file>
+      <file>${PROJECT_ROOT}\SeasonalTilt.m</file>
+      <file>${PROJECT_ROOT}\SingleAxis_EW_Data.fig</file>
+      <file>${PROJECT_ROOT}\SingleAxis_EW_Data.m</file>
+      <file>${PROJECT_ROOT}\SingleAxis_NS_Data.fig</file>
+      <file>${PROJECT_ROOT}\SingleAxis_NS_Data.m</file>
+      <file>${PROJECT_ROOT}\SingleAxisEW.m</file>
+      <file>${PROJECT_ROOT}\SingleAxisNS.m</file>
+      <file>${PROJECT_ROOT}\Solar_App_FinalReport_GUI.fig</file>
+      <file>${PROJECT_ROOT}\Solar_App_FinalReport_GUI.m</file>
+      <file>${PROJECT_ROOT}\Solar_App_GUI.fig</file>
+      <file>${PROJECT_ROOT}\Solar_App_GUI.m</file>
+      <file>${PROJECT_ROOT}\Solar_APP_Main_GUI.fig</file>
+      <file>${PROJECT_ROOT}\Solar_APP_Main_GUI.m</file>
+      <file>${PROJECT_ROOT}\Solar_Local_Clock.fig</file>
+      <file>${PROJECT_ROOT}\Solar_Local_Clock.m</file>
+      <file>${PROJECT_ROOT}\SolarFinancialModel_CashFlowComputer.m</file>
+      <file>${PROJECT_ROOT}\SolarFinancialModel_Computer.m</file>
+      <file>${PROJECT_ROOT}\SolarFinancialModel_DebtServicingComputer.m</file>
+      <file>${PROJECT_ROOT}\SolarFinancialModel_DepreciationComputer.m</file>
+      <file>${PROJECT_ROOT}\SolarFinancialModel_DisintegrationOfCellArrays.m</file>
+      <file>${PROJECT_ROOT}\SolarFinancialModel_OperationalExpenditureComputer.m</file>
+      <file>${PROJECT_ROOT}\SolarFinancialModel_RevenueComputer.m</file>
+      <file>${PROJECT_ROOT}\SolarFinancialModel_Titles_YLabels.m</file>
+      <file>${PROJECT_ROOT}\SolarFinancialModel_WorkingCapitalComputer.m</file>
+      <file>${PROJECT_ROOT}\SolarFinancialModule_Inputs_GUI.fig</file>
+      <file>${PROJECT_ROOT}\SolarFinancialModule_Inputs_GUI.m</file>
+      <file>${PROJECT_ROOT}\SolarFinancialModule_Results_GUI.fig</file>
+      <file>${PROJECT_ROOT}\SolarFinancialModule_Results_GUI.m</file>
+      <file>${PROJECT_ROOT}\SolarPVEnergySimulation.m</file>
+      <file>${PROJECT_ROOT}\SolarPVEnergySimulationPointWiseSim1.m</file>
+      <file>${PROJECT_ROOT}\SolarPVGenerationDataCleaner.m</file>
+      <file>${PROJECT_ROOT}\SolarPVIrradianceDataCleaner.m</file>
+      <file>${PROJECT_ROOT}\SolarPVWeatherDataCleaner.m</file>
+      <file>${PROJECT_ROOT}\SolarToClockTime.m</file>
+      <file>${PROJECT_ROOT}\StartEndCalender.m</file>
+      <file>${PROJECT_ROOT}\Strin_Sizing.fig</file>
+      <file>${PROJECT_ROOT}\Strin_Sizing.m</file>
+      <file>${PROJECT_ROOT}\Sun.m</file>
+      <file>${PROJECT_ROOT}\Sun1.m</file>
+      <file>${PROJECT_ROOT}\Sun_Path_Diagram.fig</file>
+      <file>${PROJECT_ROOT}\Sun_Path_Diagram.m</file>
+      <file>${PROJECT_ROOT}\SunRiseSet.m</file>
+      <file>${PROJECT_ROOT}\SWEEFA-HelpFile.pdf</file>
+      <file>${PROJECT_ROOT}\SWEEFA.prj</file>
+      <file>${PROJECT_ROOT}\SWF_Start_GUI.fig</file>
+      <file>${PROJECT_ROOT}\SWF_Start_GUI.m</file>
+      <file>${PROJECT_ROOT}\Wake_Model_GUI.fig</file>
+      <file>${PROJECT_ROOT}\Wake_Model_GUI.m</file>
+      <file>${PROJECT_ROOT}\WeibullDist_PowerEnergy.m</file>
+      <file>${PROJECT_ROOT}\WG_T1_data_GUI.fig</file>
+      <file>${PROJECT_ROOT}\WG_T1_data_GUI.m</file>
+      <file>${PROJECT_ROOT}\WG_T2_data_GUI.fig</file>
+      <file>${PROJECT_ROOT}\WG_T2_data_GUI.m</file>
+      <file>${PROJECT_ROOT}\WG_T3_data_GUI.fig</file>
+      <file>${PROJECT_ROOT}\WG_T3_data_GUI.m</file>
+      <file>${PROJECT_ROOT}\WG_T4_data_GUI.fig</file>
+      <file>${PROJECT_ROOT}\WG_T4_data_GUI.m</file>
+      <file>${PROJECT_ROOT}\Wind_App_GUI.fig</file>
+      <file>${PROJECT_ROOT}\Wind_App_GUI.m</file>
+      <file>${PROJECT_ROOT}\Wind_FinalRepot_GUI.fig</file>
+      <file>${PROJECT_ROOT}\Wind_FinalRepot_GUI.m</file>
+      <file>${PROJECT_ROOT}\Wind_GUI_1.fig</file>
+      <file>${PROJECT_ROOT}\Wind_GUI_1.m</file>
+      <file>${PROJECT_ROOT}\Wind_GUI_MainPage.fig</file>
+      <file>${PROJECT_ROOT}\Wind_GUI_MainPage.m</file>
+      <file>${PROJECT_ROOT}\Wind_Loss_Parameters_GUI.fig</file>
+      <file>${PROJECT_ROOT}\Wind_Loss_Parameters_GUI.m</file>
+      <file>${PROJECT_ROOT}\Wind_Power_Curve_Graph_GUI.fig</file>
+      <file>${PROJECT_ROOT}\Wind_Power_Curve_Graph_GUI.m</file>
+      <file>${PROJECT_ROOT}\Wind_WeibullDistribution_GUI.fig</file>
+      <file>${PROJECT_ROOT}\Wind_WeibullDistribution_GUI.m</file>
+      <file>${PROJECT_ROOT}\WrfUTC_To_LocalSolarTime.m</file>
+      <file>${PROJECT_ROOT}\WTGEnergyCalculator.m</file>
+      <file>${PROJECT_ROOT}\WTGEnergyRayCalculator.asv</file>
+      <file>${PROJECT_ROOT}\WTGEnergyRayCalculator.m</file>
+      <file>${PROJECT_ROOT}\WTGEnergySimulation.m</file>
+      <file>${PROJECT_ROOT}\WTGPowerLoss.m</file>
+      <file>${PROJECT_ROOT}\WTGPowerOutput.m</file>
+      <file>${PROJECT_ROOT}\WTGRayEnergySimulation.asv</file>
+      <file>${PROJECT_ROOT}\WTGRayEnergySimulation.m</file>
+    </fileset.resources>
+    <fileset.package />
+    <fileset.depfun>
+      <file>${PROJECT_ROOT}\IRR_Finance_Calculator.m</file>
+      <file>${PROJECT_ROOT}\NPV_Finance_Calculator.m</file>
+    </fileset.depfun>
+    <build-deliverables>
+      <file location="${PROJECT_ROOT}\SWEEFA\for_testing" name="readme.txt" optional="true">D:\Ninad Gaikwad\Documents\GERMI\Paper Publishing\MTLAB Programs\Application_EXE_Development\SolarWind_EnergyEstimation_Forecasting_App\SWEEFA\for_testing\readme.txt</file>
+      <file location="${PROJECT_ROOT}\SWEEFA\for_testing" name="splash.png" optional="false">D:\Ninad Gaikwad\Documents\GERMI\Paper Publishing\MTLAB Programs\Application_EXE_Development\SolarWind_EnergyEstimation_Forecasting_App\SWEEFA\for_testing\splash.png</file>
+      <file location="${PROJECT_ROOT}\SWEEFA\for_testing" name="SWEEFA.exe" optional="false">D:\Ninad Gaikwad\Documents\GERMI\Paper Publishing\MTLAB Programs\Application_EXE_Development\SolarWind_EnergyEstimation_Forecasting_App\SWEEFA\for_testing\SWEEFA.exe</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>D:\Matlab\Matlab2015</root>
+      <toolboxes>
+        <toolbox name="matlabhdlcoder" />
+        <toolbox name="fixedpoint" />
+        <toolbox name="embeddedcoder" />
+        <toolbox name="matlabcoder" />
+      </toolboxes>
+      <toolbox>
+        <matlabhdlcoder>
+          <enabled>true</enabled>
+        </matlabhdlcoder>
+      </toolbox>
+      <toolbox>
+        <fixedpoint>
+          <enabled>true</enabled>
+        </fixedpoint>
+      </toolbox>
+      <toolbox>
+        <embeddedcoder>
+          <enabled>true</enabled>
+        </embeddedcoder>
+      </toolbox>
+      <toolbox>
+        <matlabcoder>
+          <enabled>true</enabled>
+        </matlabcoder>
+      </toolbox>
+    </matlab>
+    <platform>
+      <unix>false</unix>
+      <mac>false</mac>
+      <windows>true</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>6.2</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>win64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>

@@ -1,0 +1,22 @@
+function [ Leap ] = LeapYearFinder( Year )
+%UNTITLED4 Summary of this function goes here
+%   Detailed explanation goes here
+% If Leap Year, then Leap=1;
+%If Leap Year, the Leap=0;
+
+a=rem(Year,4); 
+b=rem(Year,100); 
+c=rem(Year,400);
+
+if ((a==0)&&(b~=0))||(c==0)
+    
+    Leap()=1; 
+    
+else
+    
+    Leap=0;
+    
+end
+
+end
+
