@@ -224,7 +224,7 @@ else
     
 fi
 
-cd /home/Build_WRF/LIBRARIES
+cd /home/$Unam/Build_WRF/LIBRARIES
 echo ""
 echo ""
 echo ""
