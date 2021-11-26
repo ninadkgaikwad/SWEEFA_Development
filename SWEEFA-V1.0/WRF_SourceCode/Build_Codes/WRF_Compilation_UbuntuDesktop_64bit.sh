@@ -234,13 +234,18 @@ echo ""
 echo ""
 echo ""
 echo ""
-export DIR=/home/$Unam/Build_WRF/LIBRARIES
-export CC=gcc
-export CXX=g++
-export FC=gfortran
-export FCFLAGS=-m64
-export F77=gfortran
-export FFLAGS=-m64
+setenv DIR /home/$Unam/Build_WRF/LIBRARIES
+setenv CC gcc
+setenv CXX g++
+setenv FC gfortran
+setenv FCFLAGS -m64
+setenv F77 gfortran
+setenv FFLAGS -m64
+setenv JASPERLIB $DIR/grib2/lib
+setenv JASPERINC $DIR/grib2/include
+setenv LDFLAGS -L$DIR/grib2/lib
+setenv CPPFLAGS -I$DIR/grib2/include
+
 echo ""
 echo ""
 echo ""
@@ -255,8 +260,8 @@ cd netcdf-4.1.3
 ./configure --prefix=$DIR/netcdf --disable-dap --disable-netcdf-4 --disable-shared
 make
 make install
-export PATH=$DIR/netcdf/bin:$PATH
-export NETCDF=$DIR/netcdf
+setenv PATH $DIR/netcdf/bin:$PATH
+setenv NETCDF $DIR/netcdf
 cd ..
 echo ""
 echo ""
@@ -272,7 +277,7 @@ cd mpich-3.0.4
 ./configure --prefix=$DIR/mpich
 make
 make install
-export PATH=$DIR/mpich/bin:$PATH
+setenv PATH $DIR/mpich/bin:$PATH
 cd ..
 echo ""
 echo ""
@@ -283,8 +288,6 @@ echo ""
 echo ""
 echo ""
 echo ""
-export LDFLAGS=-L$DIR/grib2/lib 
-export CPPFLAGS=-I$DIR/grib2/include 
 tar xzvf zlib-1.2.7.tar.gz     
 cd zlib-1.2.7
 ./configure --prefix=$DIR/grib2
@@ -342,10 +345,10 @@ echo ""
 echo ""
 echo ""
 echo ""
-cp ${NETCDF}/include/netcdf.inc
+cp /home/$Unam/Build_WRF/LIBRARIES/netcdf/include/netcdf.inc /home/$Unam/Build_WRF/TESTS
 gfortran -c 01_fortran+c+netcdf_f.f
 gcc -c 01_fortran+c+netcdf_c.c 
-gfortran 01_fortran+c+netcdf_f.o 01_fortran+c+netcdf_c.o -L${NETCDF}/lib -lnetcdff -lnetcdf
+gfortran 01_fortran+c+netcdf_f.o 01_fortran+c+netcdf_c.o -L/home/$Unam/Buil_WRF/LIBRARIES/netcdf/lib -lnetcdff -lnetcdf
 ./a.out
 echo ""
 echo ""
@@ -356,10 +359,10 @@ echo ""
 echo ""
 echo ""
 echo ""
-cp ${NETCDF}/include/netcdf.inc
+cp /home/$Unam/Build_WRF/LIBRARIES/netcdf/include/netcdf.inc /home/$Unam/Build_WRF/TESTS
 mpif90 -c 02_fortran+c+netcdf+mpi_f.f
 mpicc -c 02_fortran+c+netcdf+mpi_c.c
-mpif90 02_fortran+c+netcdf+mpi_f.o 02_fortran+c+netcdf+mpi_c.o -L${NETCDF}/lib -lnetcdff -lnetcdf
+mpif90 02_fortran+c+netcdf+mpi_f.o 02_fortran+c+netcdf+mpi_c.o -L/home/$Unam/Buil_WRF/LIBRARIES/netcdf/lib -lnetcdff -lnetcdf
 mpirun ./a.out
 echo -e "Do you see Success in each TEST ? [y/n]: \c"
 read Ans
@@ -478,8 +481,10 @@ gunzip WPSV3.7.TAR.gz
 tar -xf WPSV3.7.TAR
 cd WPS
 ./clean
-export JASPERLIB=$DIR/grib2/lib
-export JASPERINC=$DIR/grib2/include
+setenv JASPERLIB $DIR/grib2/lib
+
+setenv JASPERINC $DIR/grib2/include
+
 echo "You should be given a list of various options for compiler types," 
 echo "whether to compile in serial or parallel, and whether to compile "
 echo "ungrib with GRIB2 capability. Unless you plan to create extremely" 

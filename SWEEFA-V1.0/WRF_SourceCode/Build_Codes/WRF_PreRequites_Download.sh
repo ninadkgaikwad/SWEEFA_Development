@@ -23,7 +23,7 @@ then
     sudo apt-get update
     sudo apt-get upgrade
     sudo apt-get dist-upgrade
-    
+        
     echo ""
     echo ""
     echo ""
@@ -34,6 +34,7 @@ then
     
     sudo apt-get install tcsh
     sudo apt-get install csh 
+    sudo apt-get install m4
 
     echo ""
     echo ""
