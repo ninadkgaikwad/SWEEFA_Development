@@ -35,6 +35,8 @@ then
     sudo apt-get install tcsh
     sudo apt-get install csh 
     sudo apt-get install m4
+    sudo apt-get install libnetcdf-dev libnetcdff-dev
+
 
     echo ""
     echo ""

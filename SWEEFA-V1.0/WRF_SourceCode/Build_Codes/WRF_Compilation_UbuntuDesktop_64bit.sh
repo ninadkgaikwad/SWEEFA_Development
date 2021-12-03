@@ -426,7 +426,7 @@ echo "em_scm_xy (1d ideal case)"
 echo -e "Give your Selection: \c"
 read Case
 echo "Compilation can take 20-30 mins. Be patient !!"
-./compile $Case >& log.compile
+./compile $Case > log.compile
 echo ""
 echo ""
 echo ""
@@ -510,7 +510,7 @@ else
 fi 
 ./configure
 echo "Compilation can take 20-30 mins. Be patient !!"
-./compile >& log.compile
+./compile > log.compile
 echo ""
 echo ""
 echo ""
