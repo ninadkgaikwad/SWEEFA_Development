@@ -36,7 +36,7 @@ then
     sudo apt-get install csh 
     sudo apt-get install m4
     sudo apt-get install libnetcdf-dev libnetcdff-dev
-
+    sudo apt install bzip2 
 
     echo ""
     echo ""
@@ -91,7 +91,7 @@ tar -xf Fortran_C_NETCDF_MPI_tests.tar
     cd /home/$Ans/Build_WRF
     curl -k -O -L -s https://www2.mmm.ucar.edu/wrf/src/WRFV3.7.TAR.gz
     curl -k -O -L -s https://www2.mmm.ucar.edu/wrf/src/WPSV3.7.TAR.gz
-        
+    
     echo ""
     echo ""
     echo ""

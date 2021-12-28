@@ -32,7 +32,8 @@ fi
 echo -e "Enter your User Folder Name  : \c"
 read Unam
 
-cd /home/$Unam/Build_WRF
+cd /home/$Unam/Build_WRF/WPS_GEOG
+curl -k -O -L -s https://www2.mmm.ucar.edu/wrf/src/wps_files/geog_minimum.tar.bz2    
 
 echo ""
 echo ""
@@ -53,49 +54,39 @@ echo ""
 echo ""
 echo ""
 
-echo -e "Select an appropriate File Number to unzip and be used as WPS Static Geographic Data ? [y/n] : \c"
+echo -e "Select an appropriate File Number to unzip and be used as WPS Static Geographic Data ?  : \c"
 read Num
 if [ $Num -eq 1 ]
 
 then
 
-    gunzip geog1_new3.7.tar.bz2
+    bzip2 -d  geog1_new3.7.tar.bz2
 
     tar -xf geog1_new3.7.tar
-
-    mv geog WPS_GEOG	
 
 elif [ $Num -eq 2 ]
 
 then
 
-    gunzip geog_complete.tar.bz2
+    bzip2 -d  geog_complete.tar.bz2
 
     tar -xf geog_complete.tar
-
-    mv geog WPS_GEOG    
-
 
 elif [ $Num -eq 3 ]
 
 then
 
-    gunzip geog_minimum.tar.bz2
+    bzip2 -d geog_minimum.tar.bz2
 
     tar -xf geog_minimum.tar
-
-    mv geog WPS_GEOG
-
 
 elif [ $Num -eq 4 ]
 
 then
 
-    gunzip geog_new3.7.tar.bz2
+    bzip2 -d  geog_new3.7.tar.bz2
 
     tar -xf geog_new3.7.tar
-
-    mv geog WPS_GEOG
 
 else 
 

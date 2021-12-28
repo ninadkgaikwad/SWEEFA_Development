@@ -58,16 +58,16 @@ read Unam
 
 cd /home/$Unam/Build_WRF/DATA
 
-echo -e "Enter Initialization Date and Time (YYYYMMDDfh) : \c"
+echo -e "Enter Initialization Date and Time (YYYYMMDD) : \c"
 read InitDateTime
 
-echo -e "Enter single forecast hour 1 (00h, 06h, 12h, 18h) : \c"
-read ForeHour1
+#curl -O -s --disable-epsv  -u anonymous:USER_ID@INSTITUTION -o GFS_$ForeHour1 
+#ftp://ftpprd.ncep.noaa.gov/pub/data/nccf/com/gfs/prod/gfs.$InitDateTime/gfs.t00z.pgrb2.0p50.f$ForeHour2
+#curl -s --disable-epsv --connect-timeout 30 -m 60 -u anonymous:USER_ID@INSTITUTION -o GFS_$ForeHour1 ftp://ftpprd.ncep.noaa.gov/pub/data/nccf/com/gfs/prod/gfs.$InitDateTime/00/gfs.t00z.pgrb2.0p50.f$ForeHour2
 
-echo -e "Enter single forecast hour 2 (000, 006, 012, 018) : \c"
-read ForeHour2
-
-curl -s --disable-epsv  -u anonymous:USER_ID@INSTITUTION -o GFS_$ForeHour1 ftp://ftpprd.ncep.noaa.gov/pub/data/nccf/com/gfs/prod/gfs.$InitDateTime/gfs.t00z.pgrb2.0p50.f$ForeHour2
+curl -s --disable-epsv --connect-timeout 30 -m 60 -u anonymous:USER_ID@INSTITUTION -o GFS_00h https://nomads.ncep.noaa.gov/pub/data/nccf/com/gfs/prod/gfs.$InitDateTime/00/atmos/gfs.t00z.pgrb2.0p50.f000
+curl -s --disable-epsv --connect-timeout 30 -m 60 -u anonymous:USER_ID@INSTITUTION -o GFS_03h https://nomads.ncep.noaa.gov/pub/data/nccf/com/gfs/prod/gfs.$InitDateTime/00/atmos/gfs.t00z.pgrb2.0p50.f003
+curl -s --disable-epsv --connect-timeout 30 -m 60 -u anonymous:USER_ID@INSTITUTION -o GFS_06h https://nomads.ncep.noaa.gov/pub/data/nccf/com/gfs/prod/gfs.$InitDateTime/00/atmos/gfs.t00z.pgrb2.0p50.f006
 
 echo ""
 echo "******************************************************************************************************************"
