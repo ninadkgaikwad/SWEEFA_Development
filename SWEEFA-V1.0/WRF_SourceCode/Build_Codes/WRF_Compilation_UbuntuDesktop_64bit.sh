@@ -23,19 +23,6 @@ echo ""
 echo ""
 echo ""
 echo ""
-echo -e "Do you want to continue ? [y/n] : \c"
-read Ans
-if [ $Ans = "Y" -o $Ans = "y" ]
-
-then
-
-    echo "Let us continue !!"
-
-else
-
-    exit 0
-    
-fi 
 
 echo -e "Enter your User Folder Name  : \c"
 read Unam
@@ -53,74 +40,7 @@ echo ""
 which gcc
 which cpp
 which gfortran
-echo -e "Do you see locations of GNU compilers gcc, cpp and gfortran ? [y/n] : \c"
-read Ans
-if [ $Ans = "Y" -o $Ans = "y" ]
 
-then
-
-    echo "Let us continue !!"
-
-else
-
-    exit 0
-    
-fi    
-
-echo ""
-echo ""
-echo ""
-echo ""
-banner "Checking For Appropriate Version of Compilers"
-echo ""
-echo ""
-echo ""
-echo ""
-gcc --version
-cpp --version
-gfortran --version
-g++ --version
-echo -e "Are all your compiler versions higher or equal to 4.4.0 ? [y/n] : \c"
-read Ans
-if [ $Ans = "Y" -o $Ans = "y" ]
-
-then
-
-    echo "Let us continue !!"
-
-else
-
-    echo "Install latest versions of the compilers"
-    exit 0
-    
-fi
-
-echo ""
-echo ""
-echo ""
-echo ""
-banner "Checking For Unix Shells"
-echo ""
-echo ""
-echo ""
-echo ""
-which bash
-which tcsh
-which csh
-echo -e "Do you see locations of GNU compilers gcc, cpp and gfortran ? [y/n] : \c"
-read Ans
-if [ $Ans = "Y" -o $Ans = "y" ]
-
-then
-
-    echo "Let us continue !!"
-
-else
-
-    echo "Install the required Unix Shells"
-    exit 0
-    
-fi
 
 cd /home/$Unam/Build_WRF/TESTS
 echo ""
@@ -345,10 +265,10 @@ echo ""
 echo ""
 echo ""
 echo ""
-cp /home/$Unam/Build_WRF/LIBRARIES/netcdf/include/netcdf.inc /home/$Unam/Build_WRF/TESTS
+cp /home/$Unam/Build_WRF/LIBRARIES/netcdf/include/netcdf.inc .
 gfortran -c 01_fortran+c+netcdf_f.f
 gcc -c 01_fortran+c+netcdf_c.c 
-gfortran 01_fortran+c+netcdf_f.o 01_fortran+c+netcdf_c.o -L/home/$Unam/Buil_WRF/LIBRARIES/netcdf/lib -lnetcdff -lnetcdf
+gfortran 01_fortran+c+netcdf_f.o 01_fortran+c+netcdf_c.o -L /home/$Unam/Build_WRF/LIBRARIES/netcdf/lib -lnetcdff -lnetcdf
 ./a.out
 echo ""
 echo ""
@@ -359,11 +279,13 @@ echo ""
 echo ""
 echo ""
 echo ""
-cp /home/$Unam/Build_WRF/LIBRARIES/netcdf/include/netcdf.inc /home/$Unam/Build_WRF/TESTS
-mpif90 -c 02_fortran+c+netcdf+mpi_f.f
+
+cp /home/$Unam/Build_WRF/LIBRARIES/netcdf/include/netcdf.inc .
+mpif90 -c -I 02_fortran+c+netcdf+mpi_f.f
 mpicc -c 02_fortran+c+netcdf+mpi_c.c
-mpif90 02_fortran+c+netcdf+mpi_f.o 02_fortran+c+netcdf+mpi_c.o -L/home/$Unam/Buil_WRF/LIBRARIES/netcdf/lib -lnetcdff -lnetcdf
+mpif90 02_fortran+c+netcdf+mpi_f.o \ 02_fortran+c+netcdf+mpi_c.o -L /home/$Unam/Build_WRF/LIBRARIES/netcdf/lib -lnetcdff -lnetcdf
 mpirun ./a.out
+
 echo -e "Do you see Success in each TEST ? [y/n]: \c"
 read Ans
 if [ $Ans = "Y" -o $Ans = "y" ]
@@ -480,11 +402,12 @@ echo ""
 gunzip WPSV3.7.TAR.gz
 tar -xf WPSV3.7.TAR
 cd WPS
+
 ./clean
 setenv JASPERLIB $DIR/grib2/lib
-
 setenv JASPERINC $DIR/grib2/include
 
+./configure
 echo "You should be given a list of various options for compiler types," 
 echo "whether to compile in serial or parallel, and whether to compile "
 echo "ungrib with GRIB2 capability. Unless you plan to create extremely" 

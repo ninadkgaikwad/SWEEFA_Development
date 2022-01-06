@@ -433,7 +433,7 @@ if [ $Ans = "Y" -o $Ans = "y" ]
 
 then
 
-    ./ungrib.exe >& ungrib.output
+    ./ungrib.exe
 
 else
 
