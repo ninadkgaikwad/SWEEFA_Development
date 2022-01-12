@@ -5,13 +5,9 @@ clear
 banner "WRF Compilation for 64-bit x86 Linux-Ubuntu Machine"
 echo ""
 echo ""
-echo ""
-echo ""
 
 echo "Before starting Create Directory Build_WRF in home directory"
 echo "Inside the Build_WRF Directory Make 2 sub-directories LIBRARIES and TESTS"
-echo ""
-echo ""
 echo ""
 echo ""
 
@@ -21,20 +17,13 @@ echo "Place the tar files of WRF and WPS version 3.7.1 in the main Build_WRF Dir
 echo "All the tar files are availabe at http://www2.mmm.ucar.edu/wrf/OnLineTutorial/compilation_tutorial.php#STEP3 "
 echo ""
 echo ""
-echo ""
-echo ""
 
 echo -e "Enter your User Folder Name  : \c"
 read Unam
 
-
-echo ""
-echo ""
 echo ""
 echo ""
 banner "Checking For Appropriate Compilers"
-echo ""
-echo ""
 echo ""
 echo ""
 which gcc
@@ -46,49 +35,32 @@ cd /home/$Unam/Build_WRF/TESTS
 echo ""
 echo ""
 echo ""
-echo ""
 banner "Testing of the Compilers"
-echo ""
-echo ""
 echo ""
 echo ""
 tar -xf Fortran_C_tests.tar
 banner "TEST 1: Fixed Format Fortran Test"
 echo ""
 echo ""
-echo ""
-echo ""
 gfortran TEST_1_fortran_only_fixed.f
 ./a.out
 echo ""
 echo ""
-echo ""
-echo ""
 banner "TEST 2: Free Format Fortran Test"
-echo ""
-echo ""
 echo ""
 echo ""
 gfortran TEST_2_fortran_only_free.f90
 ./a.out
 echo ""
 echo ""
-echo ""
-echo ""
 banner "TEST 3: C only Test"
-echo ""
-echo ""
 echo ""
 echo ""
 gcc TEST_3_c_only.c
 ./a.out
 echo ""
 echo ""
-echo ""
-echo ""
 banner "TEST 4: Fortran Calling a C Function"
-echo ""
-echo ""
 echo ""
 echo ""
 gcc -c -m64 TEST_4_fortran+c_c.c
@@ -97,36 +69,22 @@ gfortran -m64 TEST_4_fortran+c_f.o TEST_4_fortran+c_c.o
 ./a.out
 echo ""
 echo ""
-echo ""
-echo ""
 banner "TEST 5: csh Test"
-echo ""
-echo ""
 echo ""
 echo ""
 ./TEST_csh.csh
 echo ""
 echo ""
-echo ""
-echo ""
 banner "TEST 6: perl Test"
-echo ""
-echo ""
 echo ""
 echo ""
 ./TEST_perl.pl
 echo ""
 echo ""
-echo ""
-echo ""
 banner "TEST 7: sh Test"
 echo ""
 echo ""
-echo ""
-echo ""
 ./TEST_sh.sh
-echo ""
-echo ""
 echo ""
 echo ""
 echo -e "Do you see Success in each TEST ? [y/n]: \c"
@@ -147,11 +105,7 @@ fi
 cd /home/$Unam/Build_WRF/LIBRARIES
 echo ""
 echo ""
-echo ""
-echo ""
 banner "Building Libraries"
-echo ""
-echo ""
 echo ""
 echo ""
 setenv DIR /home/$Unam/Build_WRF/LIBRARIES
@@ -168,11 +122,7 @@ setenv CPPFLAGS -I$DIR/grib2/include
 
 echo ""
 echo ""
-echo ""
-echo ""
 banner "Building NETCDF : It will take time be patient"
-echo ""
-echo ""
 echo ""
 echo ""
 tar xzvf netcdf-4.1.3.tar.gz     
@@ -248,41 +198,33 @@ cd ..
 cd /home/$Unam/Build_WRF/TESTS
 echo ""
 echo ""
-echo ""
-echo ""
 banner "Library Compatibility Tests"
-echo ""
-echo ""
 echo ""
 echo ""
 tar -xf Fortran_C_NETCDF_MPI_tests.tar
 echo ""
 echo ""
-echo ""
-echo ""
 banner "TEST 1: Fortran + C + NetCDF"
 echo ""
 echo ""
-echo ""
-echo ""
-cp /home/$Unam/Build_WRF/LIBRARIES/netcdf/include/netcdf.inc .
+cp /home/$Unam/Build_WRF/LIBRARIES/netcdf/include/netcdf.inc /home/$Unam/Build_WRF/TESTS
 gfortran -c 01_fortran+c+netcdf_f.f
 gcc -c 01_fortran+c+netcdf_c.c 
 gfortran 01_fortran+c+netcdf_f.o 01_fortran+c+netcdf_c.o -L /home/$Unam/Build_WRF/LIBRARIES/netcdf/lib -lnetcdff -lnetcdf
 ./a.out
 echo ""
 echo ""
-echo ""
-echo ""
 banner "TEST 2: Fortran + C + NetCDF + MPI"
 echo ""
 echo ""
-echo ""
-echo ""
 
-cp /home/$Unam/Build_WRF/LIBRARIES/netcdf/include/netcdf.inc .
+cp /home/$Unam/Build_WRF/LIBRARIES/netcdf/include/netcdf.inc /home/$Unam/Build_WRF/TESTS
 mpif90 -c -I 02_fortran+c+netcdf+mpi_f.f
 mpicc -c 02_fortran+c+netcdf+mpi_c.c
+mpif90 02_fortran+c+netcdf+mpi_f.o \
+02_fortran+c+netcdf+mpi_c.o \
+     -L/home/sachin/Build_WRF/LIBRARIES/netcdf/lib -lnetcdff -lnetcdf
+
 mpif90 02_fortran+c+netcdf+mpi_f.o \ 02_fortran+c+netcdf+mpi_c.o -L /home/$Unam/Build_WRF/LIBRARIES/netcdf/lib -lnetcdff -lnetcdf
 mpirun ./a.out
 
@@ -304,11 +246,7 @@ fi
 cd /home/$Unam/Build_WRF
 echo ""
 echo ""
-echo ""
-echo ""
 banner "Building WRFV3"
-echo ""
-echo ""
 echo ""
 echo ""
 echo "You will see various options. Choose the option that lists the compiler you are using and the way you wish to build WRFV3 (i.e., serially or in parallel). Although there are 3 different types of parallel (smpar, dmpar, and dm+sm), we have the most experience with dmpar and typically recommend choosing this option.
@@ -356,8 +294,6 @@ echo ""
 ls -ls main/*.exe
 echo ""
 echo ""
-echo ""
-echo ""
 echo "If you compiled a real case, you should see:"
 echo "wrf.exe (model executable)"
 echo "real.exe (real data initialization)"
@@ -370,8 +306,6 @@ echo "These executables are linked to 2 different directories:"
 echo "WRFV3/run"
 echo "WRFV3/test/em_real"
 echo "You can choose to run WRF from either directory."
-echo ""
-echo ""
 echo ""
 echo ""
 echo -e "Do you see the above mentioned files ? [y/n]: \c"
@@ -392,11 +326,7 @@ fi
 cd /home/$Unam/Build_WRF
 echo ""
 echo ""
-echo ""
-echo ""
 banner "Building WPS"
-echo ""
-echo ""
 echo ""
 echo ""
 gunzip WPSV3.7.TAR.gz
@@ -436,11 +366,7 @@ echo "Compilation can take 20-30 mins. Be patient !!"
 ./compile > log.compile
 echo ""
 echo ""
-echo ""
-echo ""
 ls -ls *.exe
-echo ""
-echo ""
 echo ""
 echo ""
 echo "If the compilation is successful, there should be 3 main executables in the WPS top-level directory:"
