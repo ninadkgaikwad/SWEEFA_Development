@@ -23,6 +23,7 @@ import numpy as np
 from SolarApp_Neha import GHI_Gaussian_Distri
 from SolarApp_Neha import GHI_Sinusoidal_Distri
 
+
 def Days_To_Compute(days_To_Compute_Input):
     """A one line summary of the module or program, terminated by a period.
 
@@ -132,6 +133,7 @@ def Days_To_Compute(days_To_Compute_Input):
 
     return days_To_Compute_Output
 
+
 def Deci_To_HM(deci_To_HM_Input):
     """A one line summary of the module or program, terminated by a period.
 
@@ -155,19 +157,19 @@ def Deci_To_HM(deci_To_HM_Input):
     #UNTITLED21 Summary of this function goes here
     #   Detailed explanation goes here
     td = deci_To_HM_Input[0]
-    len=np.size(td)
+    len = np.size(td)
 
     #Thm[1][i]=fprintf('The Time is %d hours : %d mins : %d secs\n',hr[1][i],min[1][i],sec[1][i])
 
-    hr=np.fix(td/1)
-    mmm=np.remainder(td,1)
-    mm=mmm*60
-    min=np.fix(mm/1)
-    sss=np.remainder(mm,1)
-    ss=sss*60
-    sec=np.fix(ss/1)
+    hr = np.fix(td / 1)
+    mmm = np.remainder(td, 1)
+    mm = mmm * 60
+    min = np.fix(mm / 1)
+    sss = np.remainder(mm, 1)
+    ss = sss * 60
+    sec = np.fix(ss / 1)
 
-    deci_To_HM_Output = np.array([ hr,min,sec ])
+    deci_To_HM_Output = np.array([hr, min, sec])
 
     return deci_To_HM_Output
 
@@ -195,10 +197,10 @@ def Declination(declination_Input):
 
     n = declination_Input
     pi = np.pi
-    len=np.size(n)
-    dec = np.zeros((1,len))
+    len = np.size(n)
+    dec = np.zeros((1, len))
 
-    dec=23.45*(np.sin((360/365)*(n-81)*(pi/180)))
+    dec = 23.45 * (np.sin((360 / 365) * (n - 81) * (pi / 180)))
 
     declination_Output = np.array([dec])
 
@@ -237,82 +239,112 @@ def Double_Axis(double_Axis_Input):
     Author: Sharvani Laxmi Somayaji
     """
 
-    i_b,i_d,c,phi,phic_Min,phic_Max,tilt_Min,tilt_Max,beta,rho = double_Axis_Input
+    i_b, i_d, c, phi, phic_Min, phic_Max, tilt_Min, tilt_Max, beta, rho = double_Axis_Input
     #UNTITLED Summary of this function goes here
     #   Detailed explanation goes here
-    beta_Max=90-tilt_Min
-    beta_Min=90-tilt_Max
+    beta_Max = 90 - tilt_Min
+    beta_Min = 90 - tilt_Max
     pi = np.pi
 
-    if ((phi<=phic_Max)and(phi>=phic_Min))and ((beta>=beta_Min)and(beta<=beta_Max)): # Acts as a Double Axix Tracker
+    if ((phi <= phic_Max) and (phi >= phic_Min)) and (
+        (beta >= beta_Min) and
+        (beta <= beta_Max)):  # Acts as a Double Axix Tracker
 
-        cos_Inci_Angle=1
+        cos_Inci_Angle = 1
 
-        i_bc=i_b
+        i_bc = i_b
 
-        i_dc=i_d*((1-np.cos((pi/180)*(90-beta)))/(2))
+        i_dc = i_d * ((1 - np.cos((pi / 180) * (90 - beta))) / (2))
 
-        i_rc=rho*i_b*(np.sin((pi/180)*(beta))+c)*((1-np.cos((pi/180)*(90-beta)))/(2))
+        i_rc = rho * i_b * (np.sin((pi / 180) * (beta)) + c) * ((1 - np.cos(
+            (pi / 180) * (90 - beta))) / (2))
 
-        i_c=i_bc+i_dc+i_rc
+        i_c = i_bc + i_dc + i_rc
 
-    elif ((phi>phic_Max)or(phi<phic_Min))and ((beta<beta_Min)or(beta>beta_Max)):# Acts as a Fixed Tilt with an Azimuth
+    elif ((phi > phic_Max) or (phi < phic_Min)) and (
+        (beta < beta_Min) or
+        (beta > beta_Max)):  # Acts as a Fixed Tilt with an Azimuth
 
-        if phi>phic_Max:
-            phi_Actual=phic_Max
-        elif phi<phic_Min:
-            phi_Actual=phic_Min
-        if beta>beta_Max:
-            beta_Actual=beta_Max
-        elif beta<beta_Min:
-            beta_Actual=beta_Min
+        if phi > phic_Max:
+            phi_Actual = phic_Max
+        elif phi < phic_Min:
+            phi_Actual = phic_Min
+        if beta > beta_Max:
+            beta_Actual = beta_Max
+        elif beta < beta_Min:
+            beta_Actual = beta_Min
 
+        cos_Inci_Angle = (np.cos((pi / 180) * (beta)) * np.cos(
+            (pi / 180) * (phi - phi_Actual)) * np.sin(
+                (pi / 180) * (90 - beta_Actual))) + (np.sin(
+                    (pi / 180) * (beta)) * np.cos(
+                        (pi / 180) * (90 - beta_Actual)))  # Inci_dence Angle
 
-        cos_Inci_Angle=(np.cos((pi/180)*(beta))*np.cos((pi/180)*(phi-phi_Actual))*np.sin((pi/180)*(90-beta_Actual)))+(np.sin((pi/180)*(beta))*np.cos((pi/180)*(90-beta_Actual))) # Inci_dence Angle
+        i_bc = i_b * cos_Inci_Angle  # Beam Component on Collector
 
-        i_bc=i_b*cos_Inci_Angle # Beam Component on Collector
+        i_dc = i_d * ((1 + (np.cos((pi / 180) * (90 - beta_Actual)) * np.cos(
+            (pi / 180) * (phi_Actual)))) /
+                      (2))  # Diffused Component on Collector
 
-        i_dc=i_d*((1+(np.cos((pi/180)*(90-beta_Actual))*np.cos((pi/180)*(phi_Actual))))/(2)) # Diffused Component on Collector
+        i_rc = rho * i_b * (np.sin((pi / 180) * (beta)) + c) * ((1 - (np.cos(
+            (pi / 180) * (90 - beta_Actual)) * np.cos(
+                (pi / 180) *
+                (phi_Actual)))) / (2))  # Reflected Component on the Collector
 
-        i_rc=rho*i_b*(np.sin((pi/180)*(beta))+c)*((1-(np.cos((pi/180)*(90-beta_Actual))*np.cos((pi/180)*(phi_Actual))))/(2)) # Reflected Component on the Collector
+        i_c = i_bc + i_dc + i_rc  # Total Solar Irradiance on the collector
 
-        i_c=i_bc+i_dc+i_rc # Total Solar Irradiance on the collector
+    elif ((phi <= phic_Max) and (phi >= phic_Min)) and (
+        (beta < beta_Min) or
+        (beta > beta_Max)):  # Acts as a Single Axis EW Tracker
 
-    elif ((phi<=phic_Max)and(phi>=phic_Min))and ((beta<beta_Min)or(beta>beta_Max)): # Acts as a Single Axis EW Tracker
+        if beta > beta_Max:
+            beta_Actual = beta_Max
+        elif beta < beta_Min:
+            beta_Actual = beta_Min
 
-        if beta>beta_Max:
-            beta_Actual=beta_Max
-        elif beta<beta_Min:
-            beta_Actual=beta_Min
+        cos_Inci_Angle = (np.cos((pi / 180) * (beta)) * np.sin(
+            (pi / 180) * (90 - beta_Actual))) + (np.sin(
+                (pi / 180) * (beta)) * np.cos(
+                    (pi / 180) * (90 - beta_Actual)))  # Inci_dence Angle
 
-        cos_Inci_Angle=(np.cos((pi/180)*(beta))*np.sin((pi/180)*(90-beta_Actual)))+(np.sin((pi/180)*(beta))*np.cos((pi/180)*(90-beta_Actual))) # Inci_dence Angle
+        i_bc = i_b * cos_Inci_Angle  # Beam Component on Collector
 
-        i_bc=i_b*cos_Inci_Angle # Beam Component on Collector
+        i_dc = i_d * (((1 + (np.cos((pi / 180) * (90 - beta_Actual)) * np.cos(
+            (pi / 180) * (phi)))) / (2)))  # Diffused Component on Collector
 
-        i_dc=i_d*(((1+(np.cos((pi/180)*(90-beta_Actual))*np.cos((pi/180)*(phi))))/(2))) # Diffused Component on Collector
+        i_rc = rho * i_b * (np.sin((pi / 180) * (beta)) + c) * ((1 - (np.cos(
+            (pi / 180) * (90 - beta_Actual)) * np.cos(
+                (pi / 180) *
+                (phi)))) / (2))  # Reflected Component on the Collector
 
-        i_rc=rho*i_b*(np.sin((pi/180)*(beta))+c)*((1-(np.cos((pi/180)*(90-beta_Actual))*np.cos((pi/180)*(phi))))/(2)) # Reflected Component on the Collector
+        i_c = i_bc + i_dc + i_rc  # Total Solar Irradiance on the collector
 
-        i_c=i_bc+i_dc+i_rc # Total Solar Irradiance on the collector
+    elif ((beta >= beta_Min) and (beta <= beta_Max)) and ((phi > phic_Max) or
+                                                          (phi < phic_Min)):
 
-    elif ((beta>=beta_Min)and(beta<=beta_Max)) and ((phi>phic_Max)or(phi<phic_Min)):
+        if phi > phic_Max:
+            phi_Actual = phic_Max
+        elif phi < phic_Min:
+            phi_Actual = phic_Min
 
-        if phi>phic_Max:
-            phi_Actual=phic_Max
-        elif phi<phic_Min:
-            phi_Actual=phic_Min
+        cos_Inci_Angle = ((np.cos((pi / 180) * (beta))) * (np.cos(
+            (pi / 180) * (phi - phi_Actual))) * (np.sin(
+                (pi / 180) * (90 - beta)))) + (np.sin(
+                    (pi / 180) * (beta)) * np.cos(
+                        (pi / 180) * (90 - beta)))  # Inci_dence Angle
 
-        cos_Inci_Angle=((np.cos((pi/180)*(beta)))*(np.cos((pi/180)*(phi-phi_Actual)))*(np.sin((pi/180)*(90-beta))))+(np.sin((pi/180)*(beta))*np.cos((pi/180)*(90-beta))) # Inci_dence Angle
+        i_bc = i_b * cos_Inci_Angle  # Beam Component on Collector
 
-        i_bc=i_b*cos_Inci_Angle # Beam Component on Collector
+        i_dc = i_d * (((1 + (np.cos((pi / 180) * (90 - beta)))) /
+                       (2)))  # Diffused Component on Collector
 
-        i_dc=i_d*(((1+(np.cos((pi/180)*(90-beta))))/(2))) # Diffused Component on Collector
+        i_rc = rho * i_b * (np.sin((pi / 180) * (beta)) + c) * (
+            ((1 + (np.cos((pi / 180) * (90 - beta)))) /
+             (2)))  # Reflected Component on the Collector
 
-        i_rc=rho*i_b*(np.sin((pi/180)*(beta))+c)*(((1+(np.cos((pi/180)*(90-beta))))/(2))) # Reflected Component on the Collector
+        i_c = i_bc + i_dc + i_rc  # Total Solar Irradiance on the collector
 
-        i_c=i_bc+i_dc+i_rc # Total Solar Irradiance on the collector
-
-    double_Axis_Output = np.array([ i_c,i_bc,i_dc,i_rc,cos_Inci_Angle ])
+    double_Axis_Output = np.array([i_c, i_bc, i_dc, i_rc, cos_Inci_Angle])
 
     return double_Axis_Output
 
@@ -349,20 +381,25 @@ def Fixed_Tilt(fixed_Tilt_Input):
     #UNTITLED9 Summary of this function goes here
     #   Detailed explanation goes here
 
-    i_b,i_d,c,beta,phi,tilt,phic,rho = fixed_Tilt_Input
+    i_b, i_d, c, beta, phi, tilt, phic, rho = fixed_Tilt_Input
     pi = np.pi
 
-    cos_Inci_Angle=(np.cos((pi/180)*(beta))*np.cos((pi/180)*(phi-phic))*np.sin((pi/180)*(tilt)))+(np.sin((pi/180)*(beta))*np.cos((pi/180)*(tilt))) # Incidence Angle
+    cos_Inci_Angle = (np.cos((pi / 180) * (beta)) * np.cos(
+        (pi / 180) * (phi - phic)) * np.sin((pi / 180) * (tilt))) + (np.sin(
+            (pi / 180) * (beta)) * np.cos(
+                (pi / 180) * (tilt)))  # Incidence Angle
 
-    i_bc=i_b*cos_Inci_Angle # Beam Component on Collector
+    i_bc = i_b * cos_Inci_Angle  # Beam Component on Collector
 
-    i_dc=i_d*((1+np.cos((pi/180)*(tilt)))/(2)) # Diffused Component on Collector
+    i_dc = i_d * ((1 + np.cos(
+        (pi / 180) * (tilt))) / (2))  # Diffused Component on Collector
 
-    i_rc=rho*i_b*(np.sin((pi/180)*(beta))+c)*((1-np.cos((pi/180)*(tilt)))/(2)) # Reflected Component on the Collector
+    i_rc = rho * i_b * (np.sin((pi / 180) * (beta)) + c) * ((1 - np.cos(
+        (pi / 180) * (tilt))) / (2))  # Reflected Component on the Collector
 
-    i_c=i_bc+i_dc+i_rc # Total Solar Irradiance on the collector
+    i_c = i_bc + i_dc + i_rc  # Total Solar Irradiance on the collector
 
-    fixed_Tilt_Output = np.array([i_c,i_bc,i_dc,i_rc,cos_Inci_Angle])
+    fixed_Tilt_Output = np.array([i_c, i_bc, i_dc, i_rc, cos_Inci_Angle])
 
     return fixed_Tilt_Output
 
@@ -390,16 +427,18 @@ def GHI_Gau_Sin_Avg(ghi_Gau_Sin_Avg_Input):
 
     Author: Sharvani Laxmi Somayaji
     """
-    in_So,sr,ss,indi,hh_Res = ghi_Gau_Sin_Avg_Input
+    in_So, sr, ss, indi, hh_Res = ghi_Gau_Sin_Avg_Input
     #UNTITLED5 Summary of this function goes here
     #   Detailed explanation goes here
-    ghi_Gaussian_Distri_Input = GHI_Gaussian_Distri(np.array([in_So,sr,ss,indi,hh_Res]))
-    ghi_Gau,area,h,xx,m = ghi_Gaussian_Distri_Input
+    ghi_Gaussian_Distri_Input = GHI_Gaussian_Distri(
+        np.array([in_So, sr, ss, indi, hh_Res]))
+    ghi_Gau, area, h, xx, m = ghi_Gaussian_Distri_Input
 
-    ghi_Sinusoidal_Distri_Input = GHI_Sinusoidal_Distri(np.array([in_So,sr,ss,indi,hh_Res]))
+    ghi_Sinusoidal_Distri_Input = GHI_Sinusoidal_Distri(
+        np.array([in_So, sr, ss, indi, hh_Res]))
     ghi_Sin = ghi_Sinusoidal_Distri_Input[0]
 
-    ghi_Avg = (ghi_Gau + ghi_Sin)/2
+    ghi_Avg = (ghi_Gau + ghi_Sin) / 2
 
     # sum = 0
     # for j in range(0,np.size(xx)):
