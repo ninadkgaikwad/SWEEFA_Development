@@ -35,7 +35,7 @@ from SolarApp_Sharvani import Deci_to_HM
 
 def GHI_Gaussian_Distri(ghi_Gaussian_Distri_Input):
   """A one line summary of the module or program, terminated by a period.
-  
+
   Leave one blank line.  The rest of this docstring should contain an
   overall description of the module or program.  Optionally, it may also
   contain a brief description of exported classes and functions and/or usage
@@ -57,10 +57,10 @@ def GHI_Gaussian_Distri(ghi_Gaussian_Distri_Input):
 
   Author : Neha Alagi
 
-  
+
   """
   INso,Sr,Ss,Indi,HHres = ghi_Gaussian_Distri_Input
-  
+
   Hres=(60/HHres)
 
   m=1/Hres
@@ -69,17 +69,17 @@ def GHI_Gaussian_Distri(ghi_Gaussian_Distri_Input):
 
   len1 = size(hh, axis=1)
 
-  if Indi==0 or Indi==1
-    
+  if Indi==0 or Indi==1:
+
     if Indi==0:
        D=Ss-Sr
-       
+
        dd=D/2
-       
+
        SD=D/6
-       
+
        h=((INso/0.997)*(1/math.sqrt(a)(2*math.pi)))/(SD)
-       
+
        x = arange(0,D+1,m)
 
        GHI= h*fuzz.gaussmf(x,[SD dd])      #doubt
@@ -91,13 +91,13 @@ def GHI_Gaussian_Distri(ghi_Gaussian_Distri_Input):
 
 
       if Indi==1:
-        
+
         D=24;
-        
+
         dd=D/2;
-       
+
         SD=D/6;
-        
+
         h=((INso/0.997)*(1/sqrt(2*pi)))/(SD)
 
 
@@ -124,13 +124,13 @@ def GHI_Gaussian_Distri(ghi_Gaussian_Distri_Input):
   Sum = 0
 
   for j in range(0, len(xx)):
-  
+
     Sum=Sum+(GHI[0,j])
 
   ghi_Gaussian_Distri_Output = np.array([GHI,Area,h])
 
   return ghi_Gaussian_Distri_Output
- 
+
 
     # Area = sum*m   #DOUBT
     #
@@ -144,7 +144,7 @@ def GHI_Gaussian_Distri(ghi_Gaussian_Distri_Input):
 
 def GHI_HHres_Index(ghi_HHres_Index_Input):
   """A one line summary of the module or program, terminated by a period.
-  
+
   Leave one blank line.  The rest of this docstring should contain an
   overall description of the module or program.  Optionally, it may also
   contain a brief description of exported classes and functions and/or usage
@@ -165,7 +165,7 @@ def GHI_HHres_Index(ghi_HHres_Index_Input):
 
   Author : Neha Alagi
 
-  
+
   """
   #UNTITLED10 Summary of this function goes here
   #   Detailed explanation goes here
@@ -237,7 +237,7 @@ def GHI_Sinusoidal_Distri(ghi_Sinusoidal_Distri_Input):
     if Indi==0:
 
       D=Ss-Sr
-      
+
       div=D*Hres
 
       m=pi/div
@@ -278,10 +278,10 @@ def GHI_Sinusoidal_Distri(ghi_Sinusoidal_Distri_Input):
 
         GHI[0][i]=A*sin(((2*math.pi)/(2*math.pi))*ts[0][i])
 
-        
+
       xx=ts*(D/pi)
 
-      
+
   else if Indi==-1:
 
     GHI=zeros((1,len1));
@@ -298,12 +298,12 @@ def GHI_Sinusoidal_Distri(ghi_Sinusoidal_Distri_Input):
 
     Sum=Sum+(GHI[0][j])
 
-  ghi_Sinusoidal_Distri_Output = np.array([GHI, Area, H])  
+  ghi_Sinusoidal_Distri_Output = np.array([GHI, Area, H])
 
   return ghi_Sinusoidal_Distri_Output
 
   # Area=Sum*m
-  # 
+  #
   # figure
   # grid on
   # plot(xx,GHI)
@@ -313,8 +313,8 @@ def GHI_Sinusoidal_Distri(ghi_Sinusoidal_Distri_Input):
 
 
 def Hour_Angle(hour_Angle_Input):
-  """A one line summary of the module or program, terminated by a period. 
-  
+  """A one line summary of the module or program, terminated by a period.
+
   Leave one blank line.  The rest of this docstring should contain an
   overall description of the module or program.  Optionally, it may also
   contain a brief description of exported classes and functions and/or usage
@@ -327,7 +327,7 @@ def Hour_Angle(hour_Angle_Input):
   Returns:
     hour_Angle_Output (numpy.ndarray): Numpy array with the following element:
       H (numpy.ndarray)
-      
+
   Author : Neha Alagi
 
   #UNTITLED15 Summary of this function goes here
@@ -335,7 +335,7 @@ def Hour_Angle(hour_Angle_Input):
   """
   hp = np.array(hour_Angle_Input)
   hpsz = hp.shape
-  
+
   H = []
 
   len1 = hpsz[0]
@@ -346,7 +346,7 @@ def Hour_Angle(hour_Angle_Input):
     for j in range(0,len2):
 
       x.append(15*(12-(hp[0][j])))
-      
+
     H.append(x)
   hour_Angle_Output = H
   #         H(i,j)=(360/23.9344696)*(12-(Hp(1,j)));
@@ -368,7 +368,7 @@ def Hourly_File_Index(hourly_File_Index_Input):
       hp (numpy.int64)
 
   Returns:
-    hourly_File_Index_Output : 
+    hourly_File_Index_Output :
       Hourly_Index (numpy.int64)
 
   Author: Neha Alagi
@@ -382,5 +382,5 @@ def Hourly_File_Index(hourly_File_Index_Input):
   Hourly_Index = math.ceil(hp)+((n-1)*(24));
 
   hourly_File_Index_Output = Hourly_Index
-  
+
   return hourly_File_Index_Output

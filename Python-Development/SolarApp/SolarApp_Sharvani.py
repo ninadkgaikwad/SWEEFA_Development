@@ -399,12 +399,12 @@ def GHI_Gau_Sin_Avg(ghi_Gau_Sin_Avg_Input):
     #UNTITLED5 Summary of this function goes here
     #   Detailed explanation goes here
     ghi_Gaussian_Distri_Input = GHI_Gaussian_Distri(
-        np.array([in_So, sr, ss, indi, hh_Res]))
-    ghi_Gau, area, h, xx, m = ghi_Gaussian_Distri_Input
+        {'in_So':in_So, 'sr':sr, 'ss':ss, 'indi':indi, 'hh_Res':hh_Res})
+    ghi_Gau, area, h, xx, m = ghi_Gaussian_Distri_Input.values()
 
     ghi_Sinusoidal_Distri_Input = GHI_Sinusoidal_Distri(
-        np.array([in_So, sr, ss, indi, hh_Res]))
-    ghi_Sin = ghi_Sinusoidal_Distri_Input[0]
+        {'in_So':in_So, 'sr':sr, 'ss':ss, 'indi':indi, 'hh_Res':hh_Res})
+    ghi_Sin = ghi_Sinusoidal_Distri_Input['ghi_Sin']
 
     ghi_Avg = (ghi_Gau + ghi_Sin) / 2
 
